@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="./css/jianli.css">
+    <script src="./layui/layui.js"></script>
+    <script src="./js/1.12.24/jquery-1.12.4.js"></script>
+    <title>简历模板</title>
+    <script>
+
+        $(function(){
+            $('.language').hover(function(){
+                $(this).nextAll(".language_text").show();
+            },function(){
+                $(this).nextAll(".language_text").hide();
+            });
+            $('.app1').hover(function(){
+                $(this).nextAll(".app").show();
+            },function(){
+                $(this).nextAll(".app").hide();
+            });
+        });
+
+            layui.use('layer', function(){ //独立版的layer无需执行这一句
+              var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+              
+              //触发事件
+              var active = {
+                
+                offset: function(othis){
+                  var type = othis.data('type')
+                  ,text = othis.text();
+                  
+                  layer.open({
+                    type: 0
+                    ,title:false
+                    ,closeBtn:1
+                    ,area: ['400px', '400px']
+                    ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+                    ,id: 'layerDemo'+type //防止重复弹出
+                    ,content: $("#tc")
+                    ,btnAlign: 'c' //按钮居中
+                    ,shade: 0 //不显示遮罩
+                    
+                    ,yes: function(){
+                        layer.closeAll();
+                     
+                    }
+                  });
+                }
+              };
+              
+              $('#layerDemo .layui-btn').on('click', function(){
+                var othis = $(this), method = othis.data('method');
+                active[method] ? active[method].call(this, othis) : '';
+              });
+              
+            });
+            </script>
+            
+    <style>
+  
+    #an{
+        width: 100%;
+        height: 48px;
+        margin-top: 70px;
+        text-align: center;
+    }
+    #tc{
+        display: none;
+        height: 300px;
+    }
+    #tc img{
+        width: 200px;
+        height: 200px;
+
+    }
+    #tc p{
+        margin-bottom: 50px;
+    }
+    #tc i img{
+        width: 20px;
+        height: 20px;
+
+    }
+  
+    #an button{
+        background-color: #ff4f4c;
+        width: 180px;
+        height: 48px;
+        background-color: #ff4f4c;
+        display: block;
+        margin: 0 auto;
+        border-radius: 4px;
+        font-size: 16px;
+        color: #fff;
+    }
+    #an-title{
+        width: 100%;
+        font-size: 36px;
+        margin-top:40px;
+        text-align: center;
+        color: #3f3f3f;
+        font-weight: 500;
+    }
+    #an-title2{
+        text-align: center;
+        font-size: 16px;
+        margin-top:30px; 
+        color: #909090;
+    }
+    #net{
+        height: 430px;
+        margin-top:30px;
+    }
+    #net-l{
+        height:430px;
+    }
+    #net-l img{
+        width: 280px;
+        height: 395px;
+        border: 1px solid #909090;
+    }
+    #net-l a{
+        text-align: center;
+        font-size: 17px;
+        color: #909090;
+    }
+    #an1{
+        width: 100%;
+        height: 48px;
+        border: 1px solid red;
+    }
+
+
+    </style>
+</head>
+<body>
+        <header>
+                <div class="layui-row header_nav">
+                    <div class="layui-col-md3">
+                        <a href=""><img width="115px" src="./images/logo.png" alt=""></a>
+                    </div>
+                    <div class="layui-col-md6 header_nav_list">
+                        <ul>
+                            <li><a href="">简历模板</a></li>
+                            <li><a href="">求职信</a></li>
+                            <li><a href="">简历攻略</a></li>
+                            <li><a href="">简历诊断</a></li>
+                            <li><a href="">名企内推</a></li>
+                        </ul>
+                    </div>
+                    <div class="layui-col-md3 header_nav_right">
+                        
+                        <i class="layui-icon layui-icon-website language" style="margin-left: 18px; cursor: pointer;"></i>
+                        
+                        <div class="language_text">
+                            <div class="language_text_t">中文</div>
+                            <div class="language_text_b" style="color: #404040;">EN</div>
+                        </div>
+                            
+                        <i class="layui-icon layui-icon-cellphone app1"></i>
+                        <div class="layui-tab app">
+                            
+                            <div class="layui-tab-content" style="width: 218px; text-align:center;">
+                              <div class="layui-tab-item layui-show">
+                                  <h5>扫码下载app 同步编辑</h5>
+                                  <img width="140px" src="./images/app.png" alt="">
+                              </div>
+                              <div class="layui-tab-item">
+                                  <h5>扫码关注 微信同步</h5>
+                                  <img width="140px" src="./images/gongzhonghao.png" alt="">
+                              </div>
+                            </div>
+                            <ul class="layui-tab-title" style="border: none; text-align:center;">
+                                <li class="layui-this" style="margin-bottom: 15px;">App</li>
+                                <li>微信</li>
+                              </ul>
+                          </div>
+                        <div class="line"></div>
+                        <div class="link">
+                            <a href="" class="link_btn">登陆</a>
+                            <a href="" class="link_btn active">注册</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </header>
+    <div id="an" >
+            <div class="site-demo-button" id="layerDemo" style="margin-bottom: 0;">
+                <button data-method="offset" data-type="auto" class="layui-btn layui-btn-normal">定制你的模板</button>
+            </div>
+            <div id="tc">
+                    <img src="./images/erweima.png"><br>
+                    <p>扫码立即使用模板</p>
+                    <a href="" style="margin-top: 50px;">其他注册方式</a>
+
+            </div>
+       <!-- <button  class="layui-btn">居中弹出</button> -->
+    </div>
+    
+    <div id="an-title" class="layui-col-xs12">
+            使用超级简历拿到名企Offer
+    </div>
+    <div id="an-title2">
+        已经通过超级简历，成功入职投行/咨询/BAT/五百强名企的大牛简历分享
+    </div>
+    <div id="net">
+        <div class="layui-col-md1" style="height: 430px;"></div>
+        <div class="layui-col-md10" style="height:430px;">
+            <div id="net-l" class="layui-col-md3" >
+            <img src="./images/001.jpg" >
+            <a href="">2018 纽约大学硕士 | 中信证券投行部</a>
+            </div>
+            <div id="net-l" class="layui-col-md3" >
+                <img src="./images/002.png" >
+                <a href="">2019 清华应届生 | 腾讯产品经理全职</a>
+            </div>
+            <div id="net-l" class="layui-col-md3" >
+                <img src="./images/003.png" >
+                <a href="">2020 北大硕士 | 麦肯锡咨询实习生</a>
+            </div>
+            <div id="net-l" class="layui-col-md3" >
+                <img src="./images/004.png" >
+                <a href="">2018 纽约大学硕士 | 中信证券投行部</a>
+            </div>
+        </div>
+        <div class="layui-col-md1" style="height: 430px;"></div>
+    </div>
+    <div id="an" style="margin-top: 30px;">
+            <button  class="layui-btn">更多大牛简历</button>
+    </div>
+
+</body>
+</html>
