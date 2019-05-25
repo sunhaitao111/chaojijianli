@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+
+    <link rel="stylesheet" href="./css/zhuce.css">
+    <script type="text/javascript" src="./layui/layui.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background: #F5F5F7 ;
+}
+.container{
+    width: 480px;
+    padding-top: 32px;
+    background: #FFFFFF;
+    color: #404040;
+    min-height: 530px;
+    padding-top:50px; 
+    border-radius: 6px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+.container-fluid{
+    padding: 0;
+    margin: 0 auto;
+}
+.header-logo{
+    position: relative;
+    min-height: 1px;
+    text-align: center;
+    margin-top: 60px;
+}
+.header-logo img{
+    margin-top: 30px;
+    width: 180px;
+}
+.zhuce{
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+}
+.ma{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 38rem;
+    margin: 1.8rem 8rem 7.4rem 8rem;
+    height: 378px;
+}
+.weixin{
+    border: 1px solid #DEDFE1;
+    width: 300px;
+    height: 275px;
+    position: relative;
+    padding-top: 36px;
+  
+}
+.weixin-logo img{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 200px;
+
+}
+.weixin a{
+    text-decoration: none !important;
+}
+.shaoma{
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 16px;
+}
+.shaoma i{
+    color: #00c05f;
+    font-size: 20px;
+}
+.shaoma span{
+    text-align: center;
+    font-size: 14px;
+}
+.footer {
+    position: relative;
+    top: -60px;
+    left: 190px;
+    
+}
+.footer a{
+    color: #9C9C9C;
+}
+    </style>
+</head>
+
+<body class="font-zh-CN background-white  welcome-signin" >
+    <div class="container container-fluid index-container ">
+
+        <div class="row">
+            <div class="header-logo text-center col-md-offset-3 col-sm-offset-3 col-xs-offset-3 col-md-6 col-sm-6 col-xs-6">
+                <a href="">
+                    <img src="./layui/images/logo.png" alt="">
+                </a>
+
+            </div>
+            <div class="zhuce">
+                <div class="ma">
+                    <div class="weixin">
+
+                        <a class="weixin-logo">
+                            <img src="./images/weixin.png" alt="">
+                        </a>
+                        <p class="shaoma">
+                            <i class="layui-icon layui-icon-login-wechat" ></i>
+                            <span>微信扫码 快速登录</span>
+                        </p>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+        <div class="footer">
+            <a href="./zhuce.html">其他方式注册/登录</a>
+        </div>
+    </div>
+</body>
+</html>

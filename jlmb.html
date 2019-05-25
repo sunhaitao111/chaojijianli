@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="./css/jianli.css">
+    <script src="./layui/layui.js"></script>
+    <script src="./js/1.12.24/jquery-1.12.4.js"></script>
+    <title>简历模板</title>
+    <script>
+
+        $(function(){
+            $('.language').hover(function(){
+                $(this).nextAll(".language_text").show();
+            },function(){
+                $(this).nextAll(".language_text").hide();
+            });
+            $('.app1').hover(function(){
+                $(this).nextAll(".app").show();
+            },function(){
+                $(this).nextAll(".app").hide();
+            });
+        });
+
+           //弹出层
+        layui.use('layer', function(){ //独立版的layer无需执行这一句
+        var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+  
+  //触发事件
+  //z
+  var active4 = {
+    offset4: function(othis4){
+      var type = othis4.data('type')
+      ,text = othis4.text();
+      layer.open({
+        type: 1
+        ,anim: 1
+        ,title: false
+        ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+        ,id: 'layerDemo'+type //防止重复弹出
+        ,area: ['400px', '400px']
+        ,content: $('#z')
+        ,closeBtn: 1
+        ,btnAlign: 'c' //按钮居中
+        ,shade: 0 //不显示遮罩
+        ,yes: function(){
+          layer.closeAll();
+        }
+      });
+    }
+  };
+  
+  $('#layerDemo4 .layui-btn').on('click', function(){
+    var othis4 = $(this), method = othis4.data('method');
+    active4[method] ? active4[method].call(this, othis4) : '';
+  });
+  //a
+  var active = {
+    offset: function(othis){
+      var type = othis.data('type')
+      ,text = othis.text();
+      layer.open({
+        type: 1
+        ,anim: 1
+        ,title: false
+        ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+        ,id: 'layerDemo'+type //防止重复弹出
+        ,area: '1015px'
+        ,content: $('#a')
+        ,closeBtn: 1
+        ,btnAlign: 'c' //按钮居中
+        ,shade: 0 //不显示遮罩
+        ,yes: function(){
+          layer.closeAll();
+        }
+      });
+    }
+  };
+  
+  $('#layerDemo .layui-btn').on('click', function(){
+    var othis = $(this), method = othis.data('method');
+    active[method] ? active[method].call(this, othis) : '';
+  });
+  //b
+  var active1 = {
+    offset1: function(othis1){
+      var type = othis1.data('type')
+      ,text = othis1.text();
+      layer.open({
+        type: 1
+        ,anim: 1
+        ,title: false
+        ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+        ,id: 'layerDemo1'+type //防止重复弹出
+        ,area: '500px'
+        ,content: $('#b')
+        ,closeBtn: 1
+        ,btnAlign: 'c' //按钮居中
+        ,shade: 0 //不显示遮罩
+        ,yes: function(){
+          layer.closeAll();
+        }
+      });
+    }
+  };
+  $('#layerDemo1 .layui-btn').on('click', function(){
+    var othis1 = $(this), method = othis1.data('method');
+    active1[method] ? active1[method].call(this, othis1) : '';
+  });
+  //c
+  var active2 = {
+    offset2: function(othis2){
+      var type = othis2.data('type')
+      ,text = othis2.text();
+      layer.open({
+        type: 1
+        ,anim: 1
+        ,title: false
+        ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+        ,id: 'layerDemo2'+type //防止重复弹出
+        ,area: '1015px'
+        ,content: $('#c')
+        ,closeBtn: 1
+        ,btnAlign: 'c' //按钮居中
+        ,shade: 0 //不显示遮罩
+        ,yes: function(){
+          layer.closeAll();
+        }
+      });
+    }
+  };
+  $('#layerDemo2 .layui-btn').on('click', function(){
+    var othis2 = $(this), method = othis2.data('method');
+    active2[method] ? active2[method].call(this, othis2) : '';
+  });
+  //d
+  var active3 = {
+    offset3: function(othis3){
+      var type = othis3.data('type')
+      ,text = othis3.text();
+      layer.open({
+        type: 1
+        ,anim: 1
+        ,title: false
+        ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+        ,id: 'layerDemo3'+type //防止重复弹出
+        ,area: '500px'
+        ,content: $('#d')
+        ,closeBtn: 1
+        ,btnAlign: 'c' //按钮居中
+        ,shade: 0 //不显示遮罩
+        ,yes: function(){
+          layer.closeAll();
+        }
+      });
+    }
+  };
+  $('#layerDemo3 .layui-btn').on('click', function(){
+    var othis3 = $(this), method = othis3.data('method');
+    active3[method] ? active3[method].call(this, othis3) : '';
+  });
+});
+            </script>
+            
+    <style>
+  
+    #an{
+        width: 100%;
+        height: 48px;
+        margin-top: 70px;
+        text-align: center;
+    }
+    #tc{
+        display: none;
+        height: 300px;
+    }
+    #tc img{
+        width: 200px;
+        height: 200px;
+
+    }
+    #tc p{
+        margin-bottom: 50px;
+    }
+    #tc i img{
+        width: 20px;
+        height: 20px;
+    }
+    #an button{
+        background-color: #ff4f4c;
+        width: 180px;
+        height: 48px;
+        background-color: #ff4f4c;
+        display: block;
+        margin: 0 auto;
+        border-radius: 4px;
+        font-size: 16px;
+        color: #fff;
+    }
+    #an-title{
+        width: 100%;
+        font-size: 36px;
+        margin-top:40px;
+        text-align: center;
+        color: #3f3f3f;
+        font-weight: 500;
+    }
+    #an-title2{
+        text-align: center;
+        font-size: 16px;
+        margin-top:30px; 
+        color: #909090;
+    }
+    #net{
+        height: 430px;
+        margin-top:30px;
+    }
+    #net-l{
+        height:430px;
+    }
+    #net-l img{
+        width: 280px;
+        height: 395px;
+        border: 1px solid #909090;
+    }
+    #net-l a{
+        text-align: center;
+        font-size: 17px;
+        color: #909090;
+    }
+    #an1{
+        width: 100%;
+        height: 48px;
+        border: 1px solid red;
+    }
+    #a,#b,#c,#d{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+        <div id="z">
+            <div class="z-img">
+                <img width="200px" src="./images/erweima.png" alt="">
+            </div>
+            <div class="z-title">
+                <i class="layui-icon layui-icon-login-wechat"></i>扫码立即生成专业简历 
+            </div>
+            <div class="z-link">
+                <a href="./zhuce.html">其他注册方式</a>
+            </div>
+        </div>
+        <div id="a">
+            <img width="500px" style="margin-right: 9px; float: left; border:1px solid #333;" src="./images/001.jpg" alt=""> 
+            <img width="500px" style="border: 1px solid #333;" src="./images/001.jpg" alt="">   
+        </div>
+        <div id="b">
+            <img width="500px" src="./images/002.png" alt="">    
+        </div>
+        <div id="c">
+            <img width="500px" style="margin-right: 9px; float: left; border:1px solid #333;" src="./images/003.png" alt=""> 
+            <img width="500px" style="border: 1px solid #333;" src="./images/003.png" alt="">   
+        </div>
+        <div id="d">
+                <img width="500px" src="./images/004.png" alt="">    
+            </div>
+        <header>
+        
+                <div class="layui-row header_nav">
+                    <div class="layui-col-md3 layui-col-sm3 layui-col-xs9">
+                        <a href="./index.html"><img width="115px" src="./images/logo.png" alt=""></a>
+                    </div>
+                    <div class="layui-col-xs3 layui-col-sm3 layui-hide-md">
+                        <a href="" style="
+                            display: inline-block;
+                            width: 66px;
+                            height: 30px;
+                            line-height: 30px;
+                            text-align: center;
+                            font-size: 13px;
+                            padding: 0px;
+                            margin-top: -4px;
+                            background-color: #FF4F4C;
+                            color: #fff;
+                            margin-left: 10px;
+                            margin-right: 0;
+                            ">导入简历</a>
+                    </div>
+                    <div class="layui-col-md6 layui-hide-xs header_nav_list">
+                        <ul>
+                            <li><a href="./jlmb.html">简历模板</a></li>
+                            <li><a href="">求职信</a></li>
+                            <li><a href="">简历攻略</a></li>
+                            <li><a href="">简历诊断</a></li>
+                            <li><a href="">名企内推</a></li>
+                        </ul>
+                    </div>
+                    <div class="layui-col-md3 layui-hide-xs header_nav_right">
+                        
+                        <i class="layui-icon layui-icon-website language" style="margin-left: 18px; cursor: pointer;"></i>
+                        
+                        <div class="language_text">
+                            <div class="language_text_t">中文</div>
+                            <div class="language_text_b" style="color: #404040;">EN</div>
+                        </div>
+                            
+                        <i class="layui-icon layui-icon-cellphone app1"></i>
+                        <div class="layui-tab app">
+                            
+                            <div class="layui-tab-content" style="width: 218px; text-align:center;">
+                                <div class="layui-tab-item layui-show">
+                                    <h5>扫码下载app 同步编辑</h5>
+                                    <img width="140px" src="./images/app.png" alt="">
+                                </div>
+                                <div class="layui-tab-item">
+                                    <h5>扫码关注 微信同步</h5>
+                                    <img width="140px" src="./images/gongzhonghao.png" alt="">
+                                </div>
+                            </div>
+                            <ul class="layui-tab-title" style="border: none; text-align:center;">
+                                <li class="layui-this" style="margin-bottom: 15px;">App</li>
+                                <li>微信</li>
+                                </ul>
+                            </div>
+                        <div class="line"></div>
+                        <div class="link">
+                            <a href="./denglu.html" class="link_btn">登陆</a>
+                            <a href="./zhuce.html" class="link_btn active">注册</a>
+                        </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="layui-row resume-tp1">
+                        <div class="resume-title">选择你的简历模板</div>
+                        <div class="resume-slongan">选对专业的简历模板，帮你提高 2 倍求职成功率</div>
+                        <div class="layui-row layui-hide-md" style="margin-top: 40px;">
+                            <div class="layui-col-xs3 layui-row">
+                                <div class="layui-col-xs12"><img width="47px" src="./images/5.png" alt=""></div>
+                                <div class="layui-col-xs12" style="margin-top: 9px;font-size: 13px;color: #3f3f3f;">零经验</div>
+                            </div>
+                            <div class="layui-col-xs3 layui-row">
+                                <div class="layui-col-xs12"><img width="47px" src="./images/6.png" alt=""></div>
+                                <div class="layui-col-xs12" style="margin-top: 9px;font-size: 13px;color: #3f3f3f;">学生求职</div>                  
+                            </div>
+                            <div class="layui-col-xs3 layui-row">
+                                <div class="layui-col-xs12"><img width="47px" src="./images/7.png" alt=""></div>
+                                <div class="layui-col-xs12" style="margin-top: 9px;font-size: 13px;color: #3f3f3f;">申请研究生</div>    
+                            </div>
+                            <div class="layui-col-xs3 layui-row">
+                                <div class="layui-col-xs12"><img width="47px" src="./images/8.png" alt=""></div>
+                                <div class="layui-col-xs12" style="margin-top: 9px;font-size: 13px;color: #3f3f3f;">本科留学</div>
+                            </div>
+                        </div>
+                        <div class="layui-row layui-hide-md" style="margin-top: 20px;">
+                            <div class="layui-col-xs3 layui-row">
+                                <div class="layui-col-xs12"><img width="47px" src="./images/9.png" alt=""></div>
+                                <div class="layui-col-xs12" style="margin-top: 9px;font-size: 13px;color: #3f3f3f;">经典工作</div>
+                            </div>
+                            <div class="layui-col-xs3 layui-row">
+                                <div class="layui-col-xs12"><img width="47px" src="./images/10.png" alt=""></div>
+                                <div class="layui-col-xs12" style="margin-top: 9px;font-size: 13px;color: #3f3f3f;">投行咨询</div>                  
+                            </div>
+                            <div class="layui-col-xs3 layui-row">
+                                <div class="layui-col-xs12"><img width="47px" src="./images/11.png" alt=""></div>
+                                <div class="layui-col-xs12" style="margin-top: 9px;font-size: 13px;color: #3f3f3f;">产品经理</div>    
+                            </div>
+                            <div class="layui-col-xs3 layui-row">
+                                <div class="layui-col-xs12"><img width="47px" src="./images/12.png" alt=""></div>
+                                <div class="layui-col-xs12" style="margin-top: 9px;font-size: 13px;color: #3f3f3f;">程序员</div>
+                            </div> 
+                        </div>
+                        <div class="layui-col-md12 resume-type layui-hide-xs">
+                            <ul class="layui-row template-list">
+                                <li class="col-xs-3 ">
+                                <div class="tp1-content">
+                                    <div class="template-content ">
+                                        <div class="template-content flex-column align-items-center hidden">
+                                            <span class="template-img ">
+                                                <img src="./images/5.png" alt="">
+                                            </span>
+                                            <span class="layui-col-md12 template-title ">零经验实习模板</span>
+                                            <span class="layui-col-md12 template-desc">此模板适用于学生找实习，第一次工作，没有实习经历的同学</span>
+                                            <div class="c-and-e">
+                                                <div style="display: inline-block">
+                                                    <a href="" style="margin: 75px 0 15px;">中文模板</a>   
+                                                </div>
+                                                <div>
+                                                    <a href="">英文模板</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                            </ul>
+                            <ul class="layui-row template-list">
+                                <li class="col-xs-3 ">
+                                <div class="tp1-content">
+                                    <div class="template-content ">
+                                        <span class="template-img ">
+                                            <img src="./images/6.png" alt="">
+                                        </span>
+                                        <span class="layui-col-md12 template-title ">学生求职模板</span>
+                                        <span class="layui-col-md12 template-desc ">此模板适用于学生找实习或全职工作，有一定实习经历的同学</span>
+                                        <div class="c-and-e">
+                                            <div style="display: inline-block">
+                                                <a href="" style="margin: 75px 0 15px;">中文模板</a>   
+                                            </div>
+                                            <div>
+                                                <a href="">英文模板</a>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                                </li>
+                            </ul>
+                            <ul class="layui-row template-list">
+                                <li class="col-xs-3 ">
+                                <div class="tp1-content">
+                                    <div class="template-content ">
+                                        <span class="template-img ">
+                                            <img src="./images/7.png" alt="" style="height: 60px;width: 72px;">
+                                        </span>
+                                        <span class="layui-col-md12 template-title ">申请研究生模板</span>
+                                        <span class="layui-col-md12 template-desc ">此模板适用于学生申请国内及海外的研究生，或考研复试时使用</span>
+                                        <div class="c-and-e">
+                                            <div style="display: inline-block">
+                                                <a href="" style="margin: 75px 0 15px;">中文模板</a>   
+                                            </div>
+                                            <div>
+                                                <a href="">英文模板</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                                </li>
+                            </ul>
+                            <ul class="layui-row template-list">
+                                <li class="col-xs-3 ">
+                                <div class="tp1-content">
+                                    <div class="template-content ">
+                                        <span class="template-img ">
+                                            <img src="./images/8.png" alt="">
+                                        </span>
+                                        <span class="layui-col-md12 template-title ">本科留学模板</span>
+                                        <span class="layui-col-md12 template-desc ">此模板仅适用于高中生，申请国外本科留学，有针对性的英文案例和引导</span>
+                                        <div class="c-and-e">
+                                            <div style="display: inline-block">
+                                                <a href="" style="margin: 75px 0 15px;">中文模板</a>   
+                                            </div>
+                                            <div>
+                                                <a href="">英文模板</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                                </li>
+                            </ul>
+                            <ul class="layui-row template-list">
+                                <li class="col-xs-3 ">
+                                <div class="tp1-content">
+                                    <div class="template-content ">
+                                        <span class="template-img ">
+                                            <img src="./images/9.png" alt="">
+                                        </span>
+                                        <span class="layui-col-md12 template-title ">经典工作模板</span>
+                                        <span class="layui-col-md12 template-desc "> 此模板适用于工作经验一年以上，想要变动工作的人士，适用于全行业</span>
+                                        <div class="c-and-e">
+                                            <div style="display: inline-block">
+                                                <a href="" style="margin: 75px 0 15px;">中文模板</a>   
+                                            </div>
+                                            <div>
+                                                <a href="">英文模板</a>
+                                            </div>
+                                            </div>
+                                    </div>
+                                </div>    
+                                </li>
+                            </ul>
+                            <ul class="layui-row template-list">
+                                <li class="col-xs-3 ">
+                                <div class="tp1-content">
+                                    <div class="template-content ">
+                                        <span class="template-img ">
+                                            <img src="./images/10.png" alt="">
+                                        </span>
+                                        <span class="layui-col-md12 template-title ">投行咨询模板</span>
+                                        <span class="layui-col-md12 template-desc ">此模板适用于寻求投行，咨询，四大或外企工作岗位的人士</span>
+                                        <div class="c-and-e">
+                                                <div style="display: inline-block">
+                                                    <a href="" style="margin: 75px 0 15px;">中文模板</a>   
+                                                </div>
+                                                <div>
+                                                    <a href="">英文模板</a>
+                                                </div>
+                                            </div>
+                                    </div> 
+                                </div>    
+                                </li>
+                            </ul>
+                            <ul class="layui-row template-list">
+                                <li class="col-xs-3 ">
+                                <div class="tp1-content">
+                                    <div class="template-content ">
+                                        <span class="template-img ">
+                                            <img src="./images/11.png" alt="">
+                                        </span>
+                                        <span class="layui-col-md12 template-title ">产品经理模板</span>
+                                        <span class="layui-col-md12 template-desc ">此模板适用于申请互联网行业的产品相关岗位，有针对性的模块和引导</span>
+                                        <div class="c-and-e">
+                                                <div style="display: inline-block">
+                                                    <a href="" style="margin: 75px 0 15px;">中文模板</a>   
+                                                </div>
+                                                <div>
+                                                    <a href="">英文模板</a>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>    
+                                </li>
+                            </ul>
+                            <ul class="layui-row template-list">
+                                    <li class="col-xs-3 ">
+                                    <div class="tp1-content">
+                                        <div class="template-content ">
+                                            <span class="template-img ">
+                                                <img src="./images/12.png" alt="">
+                                            </span>
+                                            <span class="layui-col-md12 template-title ">程序员模板</span>
+                                            <span class="layui-col-md12 template-desc "> 此模板适用于互联网行业的程序员和技术求职者找全职工作、跳槽时使用</span>
+                                            <div class="c-and-e">
+                                                    <div style="display: inline-block">
+                                                        <a href="" style="margin: 75px 0 15px;">中文模板</a>   
+                                                    </div>
+                                                    <div>
+                                                        <a href="">英文模板</a>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>    
+                                    </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+
+    <div id="an" >
+            
+            <div class="site-demo-button" id="layerDemo4" style="margin-bottom: 0;">
+                <button data-method="offset4" data-type="auto" class="layui-btn layui-btn-normal">定制你的模板</button>
+            </div>
+            <div id="tc">
+                    <img src="./images/erweima.png"><br>
+                    <p>扫码立即使用模板</p>
+                    <a href="" style="margin-top: 50px;">其他注册方式</a>
+
+            </div>
+       <!-- <button  class="layui-btn">居中弹出</button> -->
+    </div>
+    
+    <div id="an-title" class="layui-col-xs12">
+            使用超级简历拿到名企Offer
+    </div>
+    <div id="an-title2">
+        已经通过超级简历，成功入职投行/咨询/BAT/五百强名企的大牛简历分享
+    </div>
+    <div id="net" class="layui-row">
+        <div class="layui-col-md1" style="height: 430px;"></div>
+        <div class="layui-col-md10 layui-row" style="height:430px;">
+            <div id="net-l" class="layui-col-md3" >
+            <div class="site-demo-button" id="layerDemo" style="margin-bottom: 0;">
+                <button style="background: none; border:none"  data-method="offset" data-type="auto" class="layui-btn layui-btn-normal">
+                    <img src="./images/001.jpg" >
+                    <a style="float: left">2018 纽约大学硕士 | 中信证券投行部</a>
+                </button>
+            </div>
+            </div>
+            <div id="net-l" class="layui-col-md3" >
+                <div class="site-demo-button" id="layerDemo1" style="margin-bottom: 0;">
+                    <button style="background: none; border:none"  data-method="offset1" data-type="auto" class="layui-btn layui-btn-normal">
+                        <img src="./images/002.png" >
+                        <a href="" style="float: left">2019 清华应届生 | 腾讯产品经理全职</a>
+                    </button>
+                </div>
+            </div>
+            <div id="net-l" class="layui-col-md3" >
+                    <div class="site-demo-button" id="layerDemo2" style="margin-bottom: 0;">
+                        <button style="background: none; border:none"  data-method="offset2" data-type="auto" class="layui-btn layui-btn-normal">
+                            <img src="./images/003.png" >
+                            <a href="" style="float: left">2020 北大硕士 | 麦肯锡咨询实习生</a>
+                        </button>
+                    </div>
+                </div>
+                <div id="net-l" class="layui-col-md3" >
+                        <div class="site-demo-button" id="layerDemo3" style="margin-bottom: 0;">
+                            <button style="background: none; border:none"  data-method="offset3" data-type="auto" class="layui-btn layui-btn-normal">
+                                <img src="./images/004.png" >
+                                <a href="" style="float: left">2018 纽约大学硕士 | 中信证券投行部</a>
+                            </button>
+                        </div>
+                    </div>
+            <!-- <div id="net-l" class="layui-col-md3" >
+                <img src="./images/002.png" >
+                <a href="">2019 清华应届生 | 腾讯产品经理全职</a>
+            </div>
+            <div id="net-l" class="layui-col-md3" >
+                <img src="./images/003.png" >
+                <a href="">2020 北大硕士 | 麦肯锡咨询实习生</a>
+            </div>
+            <div id="net-l" class="layui-col-md3" >
+                <img src="./images/004.png" >
+                <a href="">2018 纽约大学硕士 | 中信证券投行部</a>
+            </div> -->
+        </div>
+        <div class="layui-col-md1" style="height: 430px;"></div>
+    </div>
+    <div id="an" style="margin-top: 30px; margin-bottom: 50px;">
+            <button  class="layui-btn">更多大牛简历</button>
+    </div>
+
+</body>
+</html>

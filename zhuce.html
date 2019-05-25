@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+
+    <link rel="stylesheet" href="./layui/css/jianli.css">
+    <script type="text/javascript" src="./layui/layui.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+body{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background: #F5F5F7 !important;
+    font-family: PingFangSC-Regular;
+}
+.container{
+    width: 480px;
+    padding-top: 32px;
+    background: #FFFFFF;
+    color: #404040;
+    min-height: 530px;
+    padding-top:50px; 
+    border-radius: 6px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+.container-fluid{
+    padding: 0;
+    margin: 0 auto;
+}
+.header-logo{
+    position: relative;
+    min-height: 1px;
+    text-align: center;
+    margin-top: 60px;
+}
+.header-logo img{
+    margin-top: 30px;
+    width: 180px;
+}
+.layui-tab-title{
+  border: none;
+  text-align: center;
+}
+.layui-tab-title li{
+  padding: 0;
+  margin: 0 15px;
+}
+.layui-tab-item{
+  margin-top: 20px;
+  padding: 0 75px;
+}
+.layui-form-pane .layui-form-label{
+  width: 65px;
+  background: #DEDFE1;
+}
+.layui-form-item{
+  margin-top: 10px;
+}
+.yijian{
+  width: 65%;
+  
+  text-align: center;
+  margin: 115px auto 0;
+}
+.yijian .layui-row .layui-col-md6 .weixin:hover{
+  color:#00c05f;
+  cursor: pointer;
+}
+.yijian .layui-row .layui-col-md6 .qq:hover{
+  color:#51b7ec;
+  cursor: pointer;
+}
+</style>
+<body class="font-zh-CN background-white  welcome-signin" >
+    <div class="container container-fluid index-container ">
+
+        <div class="row" style="padding-bottom: 20px;">
+            <div class="header-logo">
+                <a href="">
+                    <img src="./layui/images/logo.png" alt="">
+                </a>
+
+            </div>
+            <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief" style="margin-top: 35px;">
+                <ul class="layui-tab-title">
+                  <li class="layui-this">注册</li>
+                  <li>登陆</li>
+                </ul>
+                <div class="layui-tab-content" style="height: 100px; text-align: center;">
+                  <div class="layui-tab-item layui-show">
+                    
+                    <form class="layui-form layui-form-pane" action="">
+                      <div class="layui-form-item">
+                          <div class="layui-inline">
+                            <label class="layui-form-label">+86</label>
+                            <div class="layui-input-inline">
+                              <input type="tel" name="phone" lay-verify="required|phone" placeholder="手机" autocomplete="off" class="layui-input">
+
+                            </div>
+                          </div>
+                          <div class="layui-form-item">
+            
+                            <div class="layui-input-inline" style="margin-right: -23px;">
+                              <input type="text" name="username" lay-verify="required" placeholder="验证码" autocomplete="off" class="layui-input" style="margin-left: 19px;">
+                              
+                            </div>
+                            <label class="layui-form-label" style="width: 105px; background: #fff; border-left: none;">
+                                <a href="" style="color:#50A4FF">获取验证码</a>
+                            </label>
+                          </div>
+                      </div>
+                      <div class="layui-form-item">
+                        <button class="layui-btn" lay-submit="" lay-filter="demo2" style="
+                                display: inline-block;width: 70%;height: 100%; text-align: center;color: #FFFFFF;background: #ff4f4c;letter-spacing: 1px;font-weight: 600;border: none;border-radius: 3px;
+                          ">免费注册</button>
+                      </div>
+                    </form>
+                    <div class="layui-row" style="text-align: left;">
+                        <div class="layui-col-md6"><a href=""  style="color: #9B9B9B">邮箱注册</a></div>
+                        <div class="layui-col-md6" style="text-align: right;"><a href=""  style="color: #9B9B9B">注册遇到问题</a></div>
+                    </div>
+
+
+
+                  </div>
+                  <div class="layui-tab-item">
+                      <form class="layui-form layui-form-pane" action="">
+                          <div class="layui-form-item">
+                              <div class="layui-inline">
+                                <label class="layui-form-label">+86</label>
+                                <div class="layui-input-inline">
+                                  <input type="tel" name="phone" lay-verify="required|phone" placeholder="手机" autocomplete="off" class="layui-input">
+    
+                                </div>
+                              </div>
+                              <div class="layui-form-item">
+                
+                                <div class="layui-input-inline" style="margin-right: -23px;">
+                                  <input type="text" name="username" lay-verify="required" placeholder="验证码" autocomplete="off" class="layui-input" style="margin-left: 19px;">
+                                  
+                                </div>
+                                <label class="layui-form-label" style="width: 105px; background: #fff; border-left: none;">
+                                    <a href="" style="color:#50A4FF">获取验证码</a>
+                                </label>
+                              </div>
+                          </div>
+                          <div class="layui-form-item">
+                            <button class="layui-btn" lay-submit="" lay-filter="demo2" style="
+                                    display: inline-block;width: 70%;height: 100%; text-align: center;color: #FFFFFF;background: #ff4f4c;letter-spacing: 1px;font-weight: 600;border: none;border-radius: 3px;
+                              ">登陆</button>
+                          </div>
+                        </form>
+                        <div class="layui-row" style="text-align: left;">
+                            <div class="layui-col-md6"><a href=""  style="color: #9B9B9B">邮箱密码登陆</a></div>
+                            <div class="layui-col-md6" style="text-align: right;"><a href=""  style="color: #9B9B9B">注册遇到问题</a></div>
+                        </div>
+                  </div>
+                  
+                </div>
+              </div> 
+              <div class="layui-row yijian">
+                <div class="layui-col-md12">
+                  
+                  <fieldset class="layui-elem-field layui-field-title site-title">
+                      <legend><a name="get" style="    font-size: 13px;">一键快捷登录</a></legend>
+                    </fieldset>
+                </div>
+                <div class="layui-row">
+                  <div class="layui-col-md6">
+                    <div class="weixin">
+                        <i class="layui-icon layui-icon-login-wechat" style="
+                                font-size: 50px;
+                                display: block;
+                                margin-bottom: 15px;
+                          "></i>
+                        微信登陆
+                    </div>
+                    
+                  </div>
+                  <div class="layui-col-md6">
+                    <div class="qq">
+                      <i class="layui-icon layui-icon-login-qq" style="
+                      font-size: 50px;
+                      display: block;
+                      margin-bottom: 15px;
+                "></i>
+                      扣扣登陆
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        
+    </div>
+    <div style="
+      color: #9C9C9C;
+    font-size: 13px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -48px;
+    ">
+        <p>点击「免费注册」按钮将视为您同意 超级简历WonderCV 的 <a href="">使用条款</a></p>
+      </div>
+
+    <script>
+        layui.use('element', function(){
+          var $ = layui.jquery
+          ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+          
+          //触发事件
+          var active = {
+            tabAdd: function(){
+              //新增一个Tab项
+              element.tabAdd('demo', {
+                title: '新选项'+ (Math.random()*1000|0) //用于演示
+                ,content: '内容'+ (Math.random()*1000|0)
+                ,id: new Date().getTime() //实际使用一般是规定好的id，这里以时间戳模拟下
+              })
+            }
+            ,tabDelete: function(othis){
+              //删除指定Tab项
+              element.tabDelete('demo', '44'); //删除：“商品管理”
+              
+              
+              othis.addClass('layui-btn-disabled');
+            }
+            ,tabChange: function(){
+              //切换到指定Tab项
+              element.tabChange('demo', '22'); //切换到：用户管理
+            }
+          };
+          
+          $('.site-demo-active').on('click', function(){
+            var othis = $(this), type = othis.data('type');
+            active[type] ? active[type].call(this, othis) : '';
+          });
+          
+          //Hash地址的定位
+          var layid = location.hash.replace(/^#test=/, '');
+          element.tabChange('test', layid);
+          
+          element.on('tab(test)', function(elem){
+            location.hash = 'test='+ $(this).attr('lay-id');
+          });
+          
+        });
+        </script>
+
+                    
+
+
+
+</body>
+</html>

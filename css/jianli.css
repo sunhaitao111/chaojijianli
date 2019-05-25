@@ -8,9 +8,9 @@ header{
     top: 0;
     left: 0;
     z-index: 2;
-    padding: 10px 0;
     width: 100%;
-    height: 36px;
+    padding: 1em 0;
+    height: 3em;
     background: #fff;
 }
 header .header_nav{
@@ -111,16 +111,17 @@ header .header_nav .header_nav_right .link .link_btn:hover{
     background: url(../images/beijing.png) repeat;
     background-size: 100%;
     width: 100%;
-    height: 845px;
+    /* height: 845px; */
     text-align: center;
     padding-top: 100px;
+    padding-bottom: 340px;
     color: #404040;
 }
 .main .banner .slogan{
-    font-size: 44px;
+    font-size: 1.5rem;
 }
 .main .banner .slogan_sub{
-    font-size: 16px;
+    font-size: 1em;
     margin-top: 18px;
     color: #9c9c9c;
 }
@@ -191,10 +192,12 @@ header .header_nav .header_nav_right .link .link_btn:hover{
     margin: 0 auto;
     background: red;
 }
-
 .resume-tp1{
     padding-top: 120px;
+    width: 80%;
+    margin: 0 auto;
 }
+
 .resume-title{
    font-size: 32px;
    width: 100%;
@@ -209,6 +212,17 @@ header .header_nav .header_nav_right .link .link_btn:hover{
     margin-top: 18px;
     display:inline-flex;
    justify-content: center;
+}
+@media screen and (max-width:750px){
+    .resume-tp1{
+        margin-top: -100px;
+    }
+    .resume-title{
+        font-size: 22px;
+    }
+    .resume-slongan{
+        font-size: 12px;
+    }
 }
 .resume-type {
     width: 100%;
@@ -275,7 +289,44 @@ ul.template-list li .tpl-content .template-content{
     padding-top: 39px;
     display: inline-flex;
 }
-
+.cont{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 40px 0 0 0;
+    background: #fbfbfb ;
+}
+.cont-img{
+    width: 100%;
+}
+.cont-lable{
+    margin: 50px auto 0;
+    width: 85px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    background-color: #FFE6E6;
+    border-radius: 25px;
+    color: #FF4F4C;
+    font-size: 13px;
+}
+.cont-title{
+    width: 373px;
+    font-size: 21px;
+    margin-top: 15px;
+    padding: 0 61px;
+    box-sizing: border-box;
+    color: #404040;
+    text-align: center;
+}
+.cont-content{
+    width: 321px;
+    font-size: 13px;
+    margin-top: 24px;
+    color: #666666;
+    text-align: left;
+    margin-left: 20px;
+}
 .wrap{
     width: 100%;
     margin: 0 auto;
@@ -656,6 +707,7 @@ ul.template-list li .tpl-content .template-content{
 .layui-carousel-ind{
   margin-top: 80px;
 }
+
 .a .a_img img{
   width: 45px;
   height: 45px;
@@ -786,4 +838,83 @@ footer{
 }
 .footer3 a{
     color: #9B9B9B;
+}
+.cc{
+    padding: 60px;
+     text-align: center; 
+     box-sizing: border-box;
+     color: #595959;
+     padding: 90px 0 0 0;
+     box-sizing: border-box;
+     box-shadow: 0px 0px 20px #ddd;
+     border-radius: 4px;
+}
+@media screen and (max-width:750px) {
+    .cc{
+        font-size: 13px;
+        color: #595959;
+        padding: 75px 0 0 10px;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 20px #ddd;
+        border-radius: 4px;
+        background-color: #fff;
+    }
+    .pannel-bottom_img{
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 61px;
+        height: 50px;
+        background: url(https://files.wondercv.com/lp_bottom_punc.png);
+        background-size: 61px;
+    }
+    .a{
+        position: absolute;
+        top: 20px;
+        left: 0;
+        width: 200px;
+        text-align: left;
+    }
+    .a .a_img img{
+        display: inline;
+        width: 45px;
+        height: 45px;
+        float: left;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+      .a .a_title{
+        display: block;
+        font-size: 16px;
+        color: #404040;
+        margin-top: 5px;
+      }
+      .a .a_text{
+        /* display: ; */
+        /* width: 0px; */
+        font-size: 14px;
+        color: #9C9C9C;
+      }
+      .layui-carousel-ind{
+        margin-top: 7px;
+      }
+      .pannel-bottom-company{
+          margin-top: 100px;
+      }
+      .fast-entrance{
+        width: 100%;
+        flex-direction: column;
+        position: relative;
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        text-align: center;
+        font-size: 21px;
+        height: 137px;
+        margin-top: 30px;
+        margin-left: -30px;
+      }
 }
