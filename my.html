@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="./css/jianli.css">
+    <script src="./layui/layui.js"></script>
+    <title>内推详情</title>
+</head>
+<style>
+*{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "微软雅黑";
+
+    }
+.body{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background: #F5F5F7;
+    cursor: default;
+    color: #404040;
+    }
+.recruit-info-show-container {
+    width: 1180px;
+    margin: auto;
+    margin-top: 68px;
+}
+.top {
+    background: #fff;
+    width: 100%;
+    margin-bottom: 24px;
+    padding: 34px;
+    justify-content: space-between;
+    align-items: center;
+}
+.d-flex {
+    display: flex;
+}
+.left {
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+}
+.left-top-part {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    width: 570px;
+}
+.text {
+    max-width: 500px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.left-bottom-part {
+    color: #606060;
+    margin-top: 20px;
+    font-size: 16px;
+}
+.top .right {
+    width: 30%;
+    border-left: 1px solid #d4d4d4;
+}
+.right {
+    height: 68px;
+}
+.recruit-personal-setting-container {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 266px;
+    flex-wrap: wrap;
+}
+.job-application-send-cv {
+    width: 266px;
+    height: 45px !important;
+    background: rgba(255,79,76,1) !important;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+.btn-theme {
+    background: #ff4f4c !important;
+    color: #FFFFFF !important;
+    border: none !important;
+}
+.button-md {
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 32px;
+    text-align: center;
+}
+.recruit-personal-setting-div {
+    font-size: 14px;
+    color: rgba(148,151,161,1) !important;
+    display: flex;
+    justify-content: space-between;
+    width: 276px;
+    margin-top: 10px;
+}
+.discard-btn {
+    color: rgba(148,151,161,1) !important;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+}
+.like-btn {
+    color: rgba(148,151,161,1);
+}
+.bottom {
+    width: 100%;
+}
+.bottom .left {
+    background: #fff;
+    width: 68%;
+    margin-right: 24px;
+    padding: 40px;
+}
+.left .desc-part {
+    margin-top: 32px;
+}
+.bottom .left .desc-part .title{
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+.divide-line {
+    background: #EEF0F5;
+    margin-left: 16px;
+    width: 495px;
+    height: 1px;
+    display: inline-block;
+}
+.desc {
+    color: #606060;
+    margin-top: 24px;
+}
+p {
+    margin: 0 0 10px;
+}
+.desc {
+    color: #606060;
+    margin-top: 24px;
+}
+
+.title1{
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 24px;
+}
+.part {
+    background: #fff;
+    padding: 16px;
+}
+.part img{
+    width: 95px;
+    display: block;
+    margin: auto;
+    margin-top: 22px;
+}
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    
+}
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+    padding: 8px;
+}
+th{
+    text-align: left;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #f5f5f5;
+}
+.table>tbody>tr>td{
+    padding: 8px;
+    line-height: 1.428571429;
+    vertical-align: top;
+}
+</style>
+<body>
+        <header>
+        
+                <div class="layui-row header_nav">
+                    <div class="layui-col-md3 layui-col-sm3 layui-col-xs9">
+                        <a href="./index.html"><img width="115px" src="./images/logo.png" alt=""></a>
+                    </div>
+                    <div class="layui-col-xs3 layui-col-sm3 layui-hide-md">
+                        <a href="" style="
+                            display: inline-block;
+                            width: 66px;
+                            height: 30px;
+                            line-height: 30px;
+                            text-align: center;
+                            font-size: 13px;
+                            padding: 0px;
+                            margin-top: -4px;
+                            background-color: #FF4F4C;
+                            color: #fff;
+                            margin-left: 10px;
+                            margin-right: 0;
+                            ">导入简历</a>
+                    </div>
+                    <div class="layui-col-md6 layui-hide-xs header_nav_list">
+                        <ul>
+                            <li><a href="./jlmb.html">简历模板</a></li>
+                            <li><a href="./qzx.html">求职信</a></li>
+                            <li><a href="./jlgl.html">简历攻略</a></li>
+                            <li><a href="./jlzd.html">简历诊断</a></li>
+                            <li class="active"><a class="active" href="./mqnt.html">名企内推</a></li>
+                        </ul>
+                    </div>
+                    <div class="layui-col-md3 layui-hide-xs header_nav_right">
+                        
+                        <i class="layui-icon layui-icon-website language" style="margin-left: 18px; cursor: pointer;"></i>
+                        
+                        <div class="language_text">
+                            <div class="language_text_t">中文</div>
+                            <div class="language_text_b" style="color: #404040;">EN</div>
+                        </div>
+                            
+                        <i class="layui-icon layui-icon-cellphone app1"></i>
+                        <div class="layui-tab app">
+                            
+                            <div class="layui-tab-content" style="width: 218px; text-align:center;">
+                                <div class="layui-tab-item layui-show">
+                                    <h5>扫码下载app 同步编辑</h5>
+                                    <img width="140px" src="./images/app.png" alt="">
+                                </div>
+                                <div class="layui-tab-item">
+                                    <h5>扫码关注 微信同步</h5>
+                                    <img width="140px" src="./images/gongzhonghao.png" alt="">
+                                </div>
+                            </div>
+                            <ul class="layui-tab-title" style="border: none; text-align:center;">
+                                <li class="layui-this" style="margin-bottom: 15px;">App</li>
+                                <li>微信</li>
+                                </ul>
+                            </div>
+                        <div class="line"></div>
+                        <div class="link">
+                            <a href="./denglu.html" class="link_btn">登陆</a>
+                            <a href="./zhuce.html" class="link_btn active">注册</a>
+                        </div>
+                        </div>
+                    </div>
+                </header>
+<div class="body">
+    <div class="layui-fluid recruit-info-show-container">
+        <div class="layui-row top d-flex">
+            <div class="layui-col-md6 left d-flex">
+                <div class="left-part">
+                    <div class="left-top-part">
+                        <div class="text">投资助理实习生</div>
+                    </div>
+                    <div class="left-bottom-part">
+                            深圳 | 经验不限 | 本科及以上学历
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="layui-col-md6 right">
+                <div class="recruit-personal-setting-container">
+                    <div class="job-recommand-btn-div">
+                        <div class="layui-btn layui-btn-danger job-application-send-cv button-md btn-theme">帮我内推</div>
+                        <div class="recruit-personal-setting-div">
+                                <div class="no-interest-btn">
+                                    <a class="discard-btn" href="">
+                                        <i class="fa layui-icon layui-icon-face-cry"></i> 不感兴趣
+                                    </a>
+                                    </div>
+                                <div class="like-or-dislike-btn">
+                                    <a class="like-btn" href="">
+                                        <i class="fa layui-icon layui-icon-rate"></i> 收藏</a>
+                                </div>
+                               <div class="share-btn">
+                                    <span class="share-recruit">
+                                        <i class="fa layui-icon layui-icon-app "></i>分享
+                                    </span>
+                               </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class=" layui-row bottom d-flex">
+            <div class="layui-col-md6 left" style="padding: 10px 40px;">
+                <div class="desc-part">
+                    <div class="title">职位描述
+                        <span class="divide-line"></span>
+                    </div>
+                    <div class="desc">
+                            <p>【公司简介】 <br>深圳时代伯乐创业投资管理有限公司成立于2011年，以强盛中国产业为己任，专注并聚焦于先进制造、大健康、ICT和新消费四大投资领域，帮助上市公司做强做大，帮助地方政府产业升级，帮助项目企业发展壮大，帮助投资者保值增值。<br>【岗位描述】投资助理实习生（日常）：先进技术及ICT领域（有实习补贴）<br>【实习内容】建设和维护行业数据库，撰写行业/公司研究报告，参与公司调研和项目投资等。<br>【岗位要求】<br>1、诚信正直，有契约精神，勤奋踏实，乐观积极，执行力强，文字功底优良。<br>2、“985”高校研究生或高年级本科生，复合背景优先，有PE/VC、券商研究所、实业项目实习经历优先。<br>3、近期可入职实习，能持续实习3个月以上。<br>【实习特色】<br>我们高度重视对实习生的培养，每位实习生配有带教老师，团队交流研讨氛围浓厚，并建有丰富的培训课程体系；实习生有机会深度参与行业研究、报告撰写、公司调研、项目评估和投资立项等多个环节。<br>【实习地点】深圳市南山区</p>
+                    </div>
+                    <div class="desc-part">
+                        <div class="title">工作地点
+                                <span class="divide-line"></span>
+                        </div>
+                        <div class="desc">深圳</div>
+                    </div>
+                    <div class="desc-part"></div>
+                </div>
+            </div>
+
+
+
+            <div class="layui-col-md6 rigth1" style="width: 32%;">
+                <div class="part">
+                    <img src="./images/01.png" alt="">
+                    <div class="title1">时代伯乐</div>
+                </div>
+                <div class="job-application-right-panel" style="margin-top:10px;">
+                    <table class="table table-striped recommand-job" style="color:#404040;background:#fff;">
+                            <thead><tr><th>热门职位</th></tr></thead>
+                            <tbody>
+                                    <tr>
+                                      <td style="border:0px">
+                                        <a style="color:#404040" href="">投资助理实习生</a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="border:0px">
+                                        <a style="color:#404040" href="">法律实习生</a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="border:0px">
+                                        <a style="color:#404040" href="">总部IT岗实习生</a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="border:0px">
+                                        <a style="color:#404040" href="">HRBP实习生</a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="border:0px">
+                                        <a style="color:#404040" href="">供应链管理实习生【可转正】</a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="border:0px">
+                                        <a style="color:#404040" href="">项目经理助理实习生</a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="border:0px">
+                                        <a style="color:#404040" href="">投资分析实习生</a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="border:0px">
+                                        <a style="color:#404040" href="">北京财务中心实习生</a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="border:0px">
+                                        <a style="color:#404040" href="">产品部实习生招聘</a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="border:0px">
+                                        <a style="color:#404040" href="">人力实习生</a>
+                                      </td>
+                                    </tr>
+                                </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+</body>
+</html>
