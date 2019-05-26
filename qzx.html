@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <script type="text/javascript" src="./layui/layui.js"></script>
+    <title>专业求职邮箱 - 超级简历 WonderCV</title>
+</head>
+<style>
+    header{
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    padding: 1em 0;
+    height: 3em;
+    background: #fff;
+}
+header .header_nav{
+    width: 94%;
+    margin: 0 auto;
+    line-height: 35px;
+    background-color: #fff;
+}
+
+header .header_nav .header_nav_list ul li{
+    float: left;
+    
+    margin-right: 9%;
+}
+header .header_nav .header_nav_list ul li.active{
+    border-bottom: 2px solid red;
+}
+header .header_nav .header_nav_list ul li a{
+    color:#404040;
+}
+header .header_nav .header_nav_list ul li a.active{
+    color:#ff4f4c;
+}
+header .header_nav .header_nav_list ul li a:hover{
+    color: #ff4f4c;
+}
+header .header_nav .header_nav_right i{
+    font-size: 20px;
+    color: #404040;
+    margin-right: 16px;
+    float: left;
+}
+.language_text{
+    display: none;
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    top: 130%;
+    left: 10%;
+    color: #ff4f4c;
+    line-height: 28px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+    background: #fff;
+}
+.app{
+    display: none;
+    width: 240px;
+    height: 300px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    cursor: pointer;
+    background-color: #fff; 
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+}
+.layui-tab-title li{
+    width: 100px;
+    color: #FF3D3D;
+    border: 1px solid #FF3D3D;
+}
+.layui-tab-title .layui-this{
+    display: block;
+    width: 100px;
+    margin-bottom: 10px; 
+    margin: 0 auto;
+    border: none;
+    background-color: #ff4f4c;
+}
+header .header_nav .header_nav_right .line{
+    height: 26px;
+    width: 2px;
+    background: #DEDFE1;
+    margin-right: 12px;
+    float: left;
+    margin-top: 4px;
+}
+header .header_nav .header_nav_right .link .link_btn{
+    display: inline-block;
+    width: 80px;
+    border-radius: 2px;
+    margin-left: 12px;
+    text-align: center;
+    color: #ff4f4c;
+    border: 1px solid #ff4f4c;
+}
+header .header_nav .header_nav_right .link .link_btn.active{
+    background: #ff4f4c !important;
+    color: #FFFFFF !important;
+}
+header .header_nav .header_nav_right .link .link_btn:hover{
+    background: #ff4f4c !important;
+    color: #FFFFFF !important;
+}
+
+.no-email-container {
+  
+    height: 45.6px;
+    font-size: 32px;
+    color: #404040;
+    margin: 0 auto;
+    margin-top: 120px;
+    text-align: center;
+}
+
+.sub-title {
+    font-size: 16px;
+    color: #909090;
+    line-height: 24px;
+  
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}
+.usb-btn{
+   width: 156px;
+   height: 48px;
+   background-color: #ff4f4c;
+   margin: 40px 0px 0px;
+   border-radius: 4%; 
+}
+.title h1{
+  text-align: center;
+}
+.content img{
+  display: block;
+  margin: 0 auto;
+  width: 310.8px;
+  height: 477.64px;
+  margin-top: 30px;
+}
+.content button{
+  display: block;
+  margin: 0 auto;
+}
+#z{
+    display: none;
+    width: 400px;
+    height: 200px;
+    padding: 60px 0;
+    box-sizing: border-box;
+    text-align: center;
+    background: #fff;
+    color: #000;
+  }
+  
+  .z-title{
+    margin-top: 15px;
+    font-size: 14px;
+    color: #757575;
+  }
+  .z-title i{
+    color: #00c05f;
+    margin-right: 10px;
+  }
+  .z-link{
+    display: block;
+    margin-top: 30px;
+    font-size: 13px;
+    color: #a1a1a1;
+  }
+</style>
+<body>
+        <header>
+        
+                <div class="layui-row header_nav">
+                    <div class="layui-col-md3 layui-col-sm3 layui-col-xs9">
+                        <a href="./index.html"><img width="115px" src="./images/logo.png" alt=""></a>
+                    </div>
+                    <div class="layui-col-xs3 layui-col-sm3 layui-hide-md">
+                        <a href="" style="
+                            display: inline-block;
+                            width: 66px;
+                            height: 30px;
+                            line-height: 30px;
+                            text-align: center;
+                            font-size: 13px;
+                            padding: 0px;
+                            margin-top: -4px;
+                            background-color: #FF4F4C;
+                            color: #fff;
+                            margin-left: 10px;
+                            margin-right: 0;
+                            ">导入简历</a>
+                    </div>
+                    <div class="layui-col-md6 layui-hide-xs header_nav_list">
+                        <ul>
+                            <li><a href="./jlmb.html">简历模板</a></li>
+                            <li class="active"><a class="active" href="./qzx.html">求职信</a></li>
+                            <li><a href="">简历攻略</a></li>
+                            <li><a href="./jlzd.html">简历诊断</a></li>
+                            <li><a href="./mqnt.html">名企内推</a></li>
+                        </ul>
+                    </div>
+                    <div class="layui-col-md3 layui-hide-xs header_nav_right">
+                        
+                        <i class="layui-icon layui-icon-website language" style="margin-left: 18px; cursor: pointer;"></i>
+                        
+                        <div class="language_text">
+                            <div class="language_text_t">中文</div>
+                            <div class="language_text_b" style="color: #404040;">EN</div>
+                        </div>
+                            
+                        <i class="layui-icon layui-icon-cellphone app1"></i>
+                        <div class="layui-tab app">
+                            
+                            <div class="layui-tab-content" style="width: 218px; text-align:center;">
+                                <div class="layui-tab-item layui-show">
+                                    <h5>扫码下载app 同步编辑</h5>
+                                    <img width="140px" src="./images/app.png" alt="">
+                                </div>
+                                <div class="layui-tab-item">
+                                    <h5>扫码关注 微信同步</h5>
+                                    <img width="140px" src="./images/gongzhonghao.png" alt="">
+                                </div>
+                            </div>
+                            <ul class="layui-tab-title" style="border: none; text-align:center;">
+                                <li class="layui-this" style="margin-bottom: 15px;">App</li>
+                                <li>微信</li>
+                                </ul>
+                            </div>
+                        <div class="line"></div>
+                        <div class="link">
+                            <a href="./denglu.html" class="link_btn">登陆</a>
+                            <a href="./zhuce.html" class="link_btn active">注册</a>
+                        </div>
+                        </div>
+                    </div>
+                </header>
+    <div id="z">
+        <div class="z-img">
+            <img width="200px" src="./images/erweima.png" alt="">
+        </div>
+        <div class="z-title">
+            <i class="layui-icon layui-icon-login-wechat"></i>扫码立即生成专业简历 
+        </div>
+        <div class="z-link">
+            <a href="./zhuce.html">其他注册方式</a>
+        </div>
+    </div>
+    <div class="no-email-container layui-hide-xs">
+            <div class="title hidden-xs"  >
+              求职信 Jobmail.vip 专业邮箱
+            </div>
+            <div class="sub-title hidden-xs">
+              提供多场景求职邮件模板，用一封吸引 HR 的求职信，助你大幅提高简历通过率
+            </div>
+         
+                   
+            <div class="site-demo-button" id="layerDemo" style="margin-bottom: 0;">
+              
+                    <div  class="usb-btn layui-btn layui-btn-lg "><button data-method="offset" data-type="auto" class="layui-btn" style="background: none; font-weight: 500;">立即使用</button> 
+                    </div>
+                 
+            <div class="content">
+              <img src="./images/63.png" style="width: 1100px;height: 441.39px;">
+            
+            </div>
+          
+    
+        </div>
+    
+      </div>
+           
+    <div class="layui-hide-md">
+      <div class="d-flex"></div>
+      <hr class="layui-bg-gray">
+      <div class="title">
+                <h1>欢迎使用 Jobmail.vip 邮箱</h1>
+      </div>
+      <div class="sub-title">
+              专业求职邮箱，助你大幅提高简历通过率
+      </div>   
+      <div class="content site-demo-button" id="" style="margin-bottom: 0;">
+             <img src="./images/62.png">
+             <button data-method="offset" data-type="auto" class="usb-btn layui-btn layui-btn-normal layui-btn-lg ">立即使用</button>
+      </div>
+    </div>
+     <script>
+       //弹出层
+       layui.use('layer', function(){ //独立版的layer无需执行这一句
+        var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+  
+  //触发事件
+  var active = {
+    offset: function(othis){
+      var type = othis.data('type')
+      ,text = othis.text();
+      layer.open({
+        type: 1
+        ,anim: 1
+        ,title: false
+        ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+        ,id: 'layerDemo'+type //防止重复弹出
+        ,area: ['400px', '400px']
+        ,content: $('#z')
+        ,closeBtn: 1
+        ,btnAlign: 'c' //按钮居中
+        ,shade: 0 //不显示遮罩
+        ,yes: function(){
+          layer.closeAll();
+        }
+      });
+    }
+  };
+  
+  $('#layerDemo .layui-btn').on('click', function(){
+    var othis = $(this), method = othis.data('method');
+    active[method] ? active[method].call(this, othis) : '';
+  });
+  
+});
+layui.use(['util', 'laydate', 'layer'], function(){
+        var util = layui.util,
+        laydate = layui.laydate,
+        layer = layui.layer;
+        //固定块
+        util.fixbar({
+            bar1: true
+            ,bar2: false
+            ,css: {right: 50, bottom: 100}
+            ,bgcolor: '#393D49'
+            ,click: function(type){
+            if(type === 'bar1'){
+                layer.msg('icon是可以随便换的')
+            } else if(type === 'bar2') {
+                layer.msg('两个bar都可以设定是否开启')
+            }
+            }
+        });
+    });
+     </script>  
+</body>
+</html>

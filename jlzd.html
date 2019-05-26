@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="./css/jianli.css">
+    <script type="text/javascript" src="./layui/layui.js"></script>
+    <title>简历诊断</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            /* background-color: #f3f3f3; */
+        }
+    header{
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    padding: 1em 0;
+    height: 3em;
+    background: #fff;
+}
+header .header_nav{
+    width: 94%;
+    margin: 0 auto;
+    line-height: 35px;
+    background-color: #fff;
+}
+
+header .header_nav .header_nav_list ul li{
+    float: left;
+    
+    margin-right: 9%;
+}
+header .header_nav .header_nav_list ul li.active{
+    color: #ff4f4c;
+    border-bottom: 2px solid red;
+}
+header .header_nav .header_nav_list ul li a{
+    color:#404040;
+}
+header .header_nav .header_nav_list ul li a.active{
+    color: #ff4f4c;
+}
+header .header_nav .header_nav_list ul li a:hover{
+    color: #ff4f4c;
+}
+header .header_nav .header_nav_right i{
+    font-size: 20px;
+    color: #404040;
+    margin-right: 16px;
+    float: left;
+}
+.language_text{
+    display: none;
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    top: 130%;
+    left: 10%;
+    color: #ff4f4c;
+    line-height: 28px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+    background: #fff;
+}
+.app{
+    display: none;
+    width: 240px;
+    height: 300px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    cursor: pointer;
+    background-color: #fff; 
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+}
+.layui-tab-title li{
+    width: 100px;
+    color: #FF3D3D;
+    border: 1px solid #FF3D3D;
+}
+.layui-tab-title .layui-this{
+    display: block;
+    width: 100px;
+    margin-bottom: 10px; 
+    margin: 0 auto;
+    border: none;
+    background-color: #ff4f4c;
+}
+header .header_nav .header_nav_right .line{
+    height: 26px;
+    width: 2px;
+    background: #DEDFE1;
+    margin-right: 12px;
+    float: left;
+    margin-top: 4px;
+}
+header .header_nav .header_nav_right .link .link_btn{
+    display: inline-block;
+    width: 80px;
+    border-radius: 2px;
+    margin-left: 12px;
+    text-align: center;
+    color: #ff4f4c;
+    border: 1px solid #ff4f4c;
+}
+header .header_nav .header_nav_right .link .link_btn.active{
+    background: #ff4f4c !important;
+    color: #FFFFFF !important;
+}
+header .header_nav .header_nav_right .link .link_btn:hover{
+    background: #ff4f4c !important;
+    color: #FFFFFF !important;
+}
+    /* #all{
+        width: 100%;
+        height: 100%;
+        background-color: #f3f3f3;
+    } */
+    #top-title{
+        width: 60%;
+        margin: 0 auto;
+        height: 60px;
+        font-weight: 500;
+        text-align: center;
+        font-size: 40px;
+        padding-top: 60px;
+    }
+    #title1{
+        display: block;
+        margin-top:20px; 
+        width: 100%;
+        height: 50px;
+        color: #909090;
+        text-align: center;
+        font-size: 16px;
+        }
+        #title1 span{
+            color: #ff4f4c;
+        }
+        #z{
+            width: 65%;
+            height: 360px;
+            padding-top:60px; 
+            margin: 0 auto;
+           
+        }
+        #net-1{
+            width: 100px;
+            height: 33px;
+            margin: 0 auto;
+            text-align: center;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 33px;
+            margin-top: 30px;
+            margin-bottom: 5px;
+            background-color:white;
+        }
+        #net-2{
+            width: 165px;
+            height: 20px;
+            text-align: center;
+            color: #404040;
+            font-size: 14px;
+            line-height: 20px;
+            margin: 0 auto;
+            background-color:white;
+        }
+        #net-3{
+            background-color:white;
+            padding: 20px;
+            margin-bottom:10px; 
+            text-align: center;
+            color: #ff4f4c;
+            font-size: 18px;
+        }
+        #net-3 span{
+            color: #ff4f4c;
+            font-size: 50px;
+            font-weight: 600;
+            background-color:white;
+            
+        }
+        #net-4 p{
+            background-color: white;
+            text-align: center;
+        }
+        #net-5{
+            margin-top:40px;
+            background-color: white; 
+        }
+        #net-5-z{
+            height: 40px;
+            text-align: center;
+            margin: 0 auto;
+            color: #ff4f4c;
+            line-height: 40px;
+            background-color: white;
+            border-radius: 4px;
+            border: 1px solid #ff4f4c;
+            cursor:pointer;
+        }
+        #net-5-z a{
+            color: #ff4f4c;
+        }
+        .items_con{
+            background-color: white;
+            padding-bottom: 50px;
+            margin-right:25px;
+            width: 30%; 
+            border-radius: 6px;
+            border: 1px solid #b3b3b3;
+
+        }
+        .items_con:hover {
+            /* padding-bottom: 0; */
+            height: 400px;
+            margin-top: -34px;
+            border: 1px solid red;
+        }
+        .items_con:hover #net-5-z{
+            background-color: #FF3F3D;
+            color: #fff;
+        }
+        .items_con:hover #net-5-z a{
+            color: #fff;
+        }
+        #panel-mid{
+            width: 84%;
+            /* height: 500px; */
+            margin: 0 auto ;
+            cursor: default;
+            
+           
+        }
+        #panel-mid-left{
+            width: 40%;
+            height: 500px;
+            float: left;
+        }
+        #panel-mid-title1{
+            color: #404040;
+            font-size: 28px;
+            width: 70%;
+            height:80px ;
+            padding-bottom:30px; 
+
+        }
+        #panel-mid-title2{
+            width: 80%;
+            height: 379px;
+            color: #9c9c9c;
+            font-size: 14px;
+        
+        }
+        #panel-mid-title2 ul li{
+            color: #9c9c9c;
+            font-size: 14px;
+            list-style: initial;
+            padding-bottom: 20px;
+        }
+        #panel-mid-title2 button{
+            background-color:#ffffff;
+            width:  150px;
+            height: 40px;
+            color: #ff4f4c;
+            margin-top: 60px;
+            border: 1px solid #ff4f4c;
+        }
+        #panel-mid-title2 button:hover{
+            background-color: #FF3F3D;
+            color: #fff;
+
+        }
+        .kfzx {
+            margin-left:100px;
+            background-color:#ffffff;
+            width:  150px;
+            height: 40px;
+            color: #ff4f4c;
+            margin-top: 20px;
+            border: 1px solid #ff4f4c;
+        }
+        .kfzx:focus {
+            background-color:red;
+            color: #fff;
+        }
+
+
+        
+        #panel-mid-right{
+            border: 1px soli red;
+
+        }
+        #panel-mid-right img{
+            width: 60%;
+            height: 500px;
+
+        }
+        #panel-mid-l{
+            width: 60px;
+            height: 20px;
+            border: 1px solid red;
+        }
+
+    
+
+        .btn{
+            background-image: linear-gradient(85deg, #FF813A, #FF3F3D 60%, #FF3D3D);
+            border-radius: 4px;
+            margin: 24px auto 34px auto;
+            display: block;
+            width: 65%;
+            line-height: 44px;
+            text-align: center;
+            padding: 0;
+            /* height: 100%; */
+            color: rgb(248, 248, 248);
+            font-size: 16px;
+        }
+        #panel-mid h2{
+            width: 68%;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 20px;
+             line-height: 34px;
+             color: #404040;
+        }
+        #panel-mid p{
+            color: #9c9c9c;
+            font-size: 14px;
+            list-style: initial;
+            padding-bottom: 20px;
+  
+        }
+        #panel-bottom-title{
+            width: 100%;
+            height: 30px;
+            border: 1px solid red;
+
+        }
+        #x h2{
+            width: 100%;
+            color: #404040;
+            font-size: 21px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 20px;
+        }
+        #x p{
+            text-align: center;
+            color: #9b9b9b;
+            padding-bottom: 30px;
+            font-size: 12px;
+        }
+        #end{
+            width: 90%;
+            margin: 0 auto;
+            border-radius: 4px;
+            padding-bottom: 40px;
+            background-color:white; 
+            
+        }
+        #end img{
+            width: 48px;
+            height: 48px;
+            float: left;
+            margin: 10px 10px 0 30px;
+        }
+        #end p{
+            padding-top: 15px;
+            color: #404040;
+            font-size: 16px;
+            margin-bottom: 5px;
+            background-color:white;
+        }
+        #end a{
+            color: #9c9c9c;
+            font-size: 14px;
+            background-color:white;
+        }
+        #text{
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 20px;
+            background-color:white;
+        }
+        #text p{
+            color: #9c9c9c;
+            font-size: 14px;
+            letter-spacing:2px;
+        }
+        .wrap{
+            width: 100%;
+            padding-top: 50px;
+            background: #f3f3f3;
+        }
+        .pannel{
+    width: 100%;
+    background: #fbfbfb;
+    padding: 55px 0 0 0;
+    height: 790px;
+}
+.pannel-bottom{
+    position: relative;
+    width: 80%;
+    height: 100px;
+    text-align: center;
+    margin: 0 auto 0;
+    
+}
+.pannel-bottom_img{
+    position: absolute;
+    top: -65px;
+    left: 0;
+    width: 113px;
+    height: 102px;
+    background: url(https://files.wondercv.com/lp_bottom_punc.png);
+    background-size: 113px;
+}
+.pannel-bottom-title{
+    font-size: 28px;
+    color: #404040;
+    margin-top: 20px;
+}
+.pannel-bottom-slogan{
+    font-size: 14px;
+    color: #9B9B9B;
+    margin-top: 15px;
+}
+.pannel-bottom-swiper{
+  margin-top: 50px;
+}
+.layui-carousel-ind{
+  margin-top: 80px;
+}
+
+.a .a_img img{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.a .a_title{
+  margin-top: 15px;
+  font-size: 16px;
+  color: #404040;
+}
+.a .a_text{
+  font-size: 14px;
+  color: #9C9C9C;
+}
+.pannel-bottom-left{
+  float: left;
+  margin: 70px 0 0 30px;
+}
+.pannel-bottom-right{
+  float: right;
+  margin: -125px 30px 0 0;
+}
+.pannel-bottom-company{
+  margin-top: 160px;
+}
+.fast-entrance{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position:absolute;
+  top: 720%;
+  left: 15%;
+  width: 800px;
+  height: 100px;
+  border-radius: 4px;
+  background-color: #FF4F4C;
+  color: #fff;
+  padding: 0 32px;
+  font-size: 18px;
+  box-shadow: 0px 0px 20px #ddd;
+  z-index: 9;
+}
+.fast-entrance a{
+  display: inline-block;
+  width: 134px;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  color: #FF4F4C;
+  font-size: 14px;
+}
+    </style>
+</head>
+<body>
+        <header>
+        
+                <div class="layui-row header_nav">
+                    <div class="layui-col-md3 layui-col-sm3 layui-col-xs9">
+                        <a href="./index.html"><img width="115px" src="./images/logo.png" alt=""></a>
+                    </div>
+                    <div class="layui-col-xs3 layui-col-sm3 layui-hide-md">
+                        <a href="" style="
+                            display: inline-block;
+                            width: 66px;
+                            height: 30px;
+                            line-height: 30px;
+                            text-align: center;
+                            font-size: 13px;
+                            padding: 0px;
+                            margin-top: -4px;
+                            background-color: #FF4F4C;
+                            color: #fff;
+                            margin-left: 10px;
+                            margin-right: 0;
+                            ">导入简历</a>
+                    </div>
+                    <div class="layui-col-md6 layui-hide-xs header_nav_list">
+                        <ul>
+                            <li><a href="./jlmb.html">简历模板</a></li>
+                            <li><a href="./qzx.html">求职信</a></li>
+                            <li><a href="">简历攻略</a></li>
+                            <li class="active"><a class="active" href="./jlzd.html">简历诊断</a></li>
+                            <li><a href="./mqnt.html">名企内推</a></li>
+                        </ul>
+                    </div>
+                    <div class="layui-col-md3 layui-hide-xs header_nav_right">
+                        
+                        <i class="layui-icon layui-icon-website language" style="margin-left: 18px; cursor: pointer;"></i>
+                        
+                        <div class="language_text">
+                            <div class="language_text_t">中文</div>
+                            <div class="language_text_b" style="color: #404040;">EN</div>
+                        </div>
+                            
+                        <i class="layui-icon layui-icon-cellphone app1"></i>
+                        <div class="layui-tab app">
+                            
+                            <div class="layui-tab-content" style="width: 218px; text-align:center;">
+                                <div class="layui-tab-item layui-show">
+                                    <h5>扫码下载app 同步编辑</h5>
+                                    <img width="140px" src="./images/app.png" alt="">
+                                </div>
+                                <div class="layui-tab-item">
+                                    <h5>扫码关注 微信同步</h5>
+                                    <img width="140px" src="./images/gongzhonghao.png" alt="">
+                                </div>
+                            </div>
+                            <ul class="layui-tab-title" style="border: none; text-align:center;">
+                                <li class="layui-this" style="margin-bottom: 15px;">App</li>
+                                <li>微信</li>
+                                </ul>
+                            </div>
+                        <div class="line"></div>
+                        <div class="link">
+                            <a href="./denglu.html" class="link_btn">登陆</a>
+                            <a href="./zhuce.html" class="link_btn active">注册</a>
+                        </div>
+                        </div>
+                    </div>
+                </header>
+    <div class="wrap">
+    <div class="layui-row layui-hide-xs">
+    <div id="top-title" class=""> 
+         距离你的梦想，可能只差一臂之力
+     </div>
+    </div>
+    <div class="layui-row layui-hide-xs">
+    <div id="title1" class="">
+        业界最顶级的导师辅导，拥有全球名企实战经验，简历修改后获得 <span>2倍以上面试邀请</span>，<br>帮你拿到梦想Offer
+    </div>
+</div>
+
+
+<div class="layui-row layui-hide-md">
+        <div id="top-title" class="" style="font-size: 28px;width: 65%;margin: 0 auto;"> 
+             距离你的梦想，可能只差一臂之力
+         </div>
+        </div>
+        <div class="layui-row layui-hide-md">
+        <div id="title1" class="" style="font-size: 16px;width: 87%;margin: 0 auto;margin-top: 30px;">
+            业界最顶级的导师辅导，拥有全球名企实战经验，简历修改后获得 <span>2倍以上面试邀请</span>，帮你拿到梦想Offer
+        </div>
+    </div>
+    <div class="create-resume layui-hide-md">
+        <a href="" class="btn create-resume-btn ">免费生成专业简历</a>
+    </div>
+    <div id="z" class="layui-hide-xs">
+            <div class="layui-col-md4  layui-col-xs12 layui-col-xs12 items_con">
+                    <div id="net-1">
+                            体验版
+                    </div>
+                    <div id="net-2">
+                        1 轮 简历辅导反馈
+                    </div>
+                    <div id="net-3">
+                        ￥&nbsp;<span>99</span>
+                    </div>
+                    <div id="net-4">
+                        <p>适用于：申请实习</p>
+                        <p>可选中文 或 英文简历</p>
+                    </div>
+                    <div id="net-5">
+                        <div class="layui-col-md2" style="height: 40px;background-color: white;"></div>
+                        <div id="net-5-z" class="layui-col-md8" >
+                            <a href="./denglu.html">立即体验</a>
+                        </div>
+                        <div class="layui-col-md2" style="height: 40px;background-color: white;"></div>
+                             
+                    </div>
+                    
+            </div>
+            <div class="layui-col-md4 items_con" >
+                    <div id="net-1">
+                            专业版
+                    </div>
+                    <div id="net-2">
+                        30 天内多轮 简历辅导反馈
+                    </div>
+                    <div id="net-3">
+                        ￥&nbsp;<span>399</span>
+                    </div>
+                    <div id="net-4">
+                        <p>适用于：申请全职 跳槽转行</p>
+                        <p>提供职业规划建议*</p>
+                    </div>
+                    <div id="net-5">
+                        <div class="layui-col-md2" style="height: 40px;background-color: white;"></div>
+                        <div id="net-5-z" class="layui-col-md8">
+                                <a href="./denglu.html">立即体验</a>
+                        </div>
+                        <div class="layui-col-md2" style="height: 40px;background-color: white;"></div>
+                             
+                    </div>
+            </div>
+            <div class="layui-col-md4 items_con" >
+                    <div id="net-1">
+                            双语套餐
+                    </div>
+                    <div id="net-2">
+                        30 天内 多轮辅导反馈
+                    </div>
+                    <div id="net-3">
+                        ￥&nbsp;<span>999</span>
+                    </div>
+                    <div id="net-4">
+                        <p>中英文简历 求职信</p>
+                        <p>整套求职文件辅导</p>
+                    </div>
+                    <div id="net-5">
+                        <div class="layui-col-md2" style="height: 40px;background-color: white;"></div>
+                        <div id="net-5-z" class="layui-col-md8"  >
+                                <a href="./denglu.html">立即体验</a>
+                        </div>
+                        <div class="layui-col-md2" style="height: 40px;background-color: white;"></div>
+                             
+                    </div>
+            </div>
+            
+    </div>
+    <div id="z" class=" layui-hide-md" style="width: 80%;">
+        <div class="layui-row">
+            <div class="layui-col-md4  layui-col-xs12 items_con" style="text-align: center;width:100%; ">
+                    <div id="net-1">
+                            体验版
+                    </div>
+                    <div id="net-2">
+                        1 轮 简历辅导反馈
+                    </div>
+                    <div id="net-3">
+                        ￥&nbsp;<span>99</span>
+                    </div>
+                    <div id="net-4">
+                        <p>适用于：申请实习</p>
+                        <p>可选中文 或 英文简历</p>
+                    </div>
+                    <div id="net-5">
+                        <div class="layui-col-xs2" style="height: 40px;background-color: white;"></div>
+                        <div id="net-5-z" class="layui-col-xs8" >
+                            立即体验
+                        </div>
+                        <div class="layui-col-xs2" style="height: 40px;background-color: white;"></div>
+                             
+                    </div>
+
+            </div>
+            <div class="layui-col-md4  layui-col-xs12 items_con" style="text-align: center;width:100%;margin-top: 10px; ">
+                    <div id="net-1">
+                            体验版
+                    </div>
+                    <div id="net-2">
+                        1 轮 简历辅导反馈
+                    </div>
+                    <div id="net-3">
+                        ￥&nbsp;<span>99</span>
+                    </div>
+                    <div id="net-4">
+                        <p>适用于：申请实习</p>
+                        <p>可选中文 或 英文简历</p>
+                    </div>
+                    <div id="net-5">
+                        <div class="layui-col-xs2" style="height: 40px;background-color: white;"></div>
+                        <div id="net-5-z" class="layui-col-xs8" >
+                            立即体验
+                        </div>
+                        <div class="layui-col-xs2" style="height: 40px;background-color: white;"></div>
+                             
+                    </div>
+                   
+
+            </div>
+            <div class="layui-col-md4  layui-col-xs12 items_con" style="text-align: center;width:100%; margin-top: 10px;">
+                    <div id="net-1">
+                            体验版
+                    </div>
+                    <div id="net-2">
+                        1 轮 简历辅导反馈
+                    </div>
+                    <div id="net-3">
+                        ￥&nbsp;<span>99</span>
+                    </div>
+                    <div id="net-4">
+                        <p>适用于：申请实习</p>
+                        <p>可选中文 或 英文简历</p>
+                    </div>
+                    <div id="net-5">
+                        <div class="layui-col-xs2" style="height: 40px;background-color: white;"></div>
+                        <div id="net-5-z" class="layui-col-xs8" >
+                            立即体验
+                        </div>
+                        <div class="layui-col-xs2" style="height: 40px;background-color: white;"></div>
+                             
+                    </div>
+                    
+            </div>
+            
+        </div>
+ 
+            
+    </div>
+
+    <div style="width: 80%;height:60px;margin:0 auto;border-top:1px solid #9c9c9c;opacity:0.4;margin-top: 60px;" class="layui-hide-xs">
+        <div style="width: 68px;height:24px;font-size:14px;background-color: #9c9c9c;border-radius: 40px;margin-left:33%;margin-top:70px;display: block ;position: absolute;text-align: center;line-height: 24px;display: block ">
+            修改前
+        </div>
+        <div style="width: 68px;height:24px;font-size:14px;background-color: #fbece7;border-radius: 40px;display: block ;text-align: center;line-height: 24px;float:right;margin-right: 27% ;position: relative;margin-top: 60px;color: #ff4f4c">
+            修改后
+        </div>
+    
+    </div>
+
+
+
+    <div id="panel-mid" class="layui-hide-xs">
+        <div id="panel-mid-left">
+            <div id="panel-mid-title1">
+                    专业、高效的简历修改与求职指导服务
+            </div>
+            <div id="panel-mid-title2">
+                <ul>
+                    <li>当你投递了许多简历，却都没有收到回复，不知道自己为什么过滤掉；</li>
+                    <li>当你找不到自己的亮点，“卖”不出自己：工作经历和个人资质不突出；对想去的岗位缺乏针对性；必须要素缺失；
+                        没有抓住重点展示出最重要的能力。也许履历根本比不上你的人得到了offer，但你却没有；</li>
+                    <li>当你不知道如何处理自身劣势；空档期怎么写、被公司裁员怎么写、因为父母身体不好而搬迁怎么写；</li>    
+                </ul>
+                针对性的简历修改服务能够帮助求职者更好的认识并总结自己的竞争力，快速找到适合自己的好工作。
+                <button data-method="offset" data-type="auto" style="cursor:pointer;" >资讯客服</button>
+            </div>    
+        </div>
+        
+        <div id="panel-mid-right">
+            <img src="./layui/images/31.png" >
+        </div>
+
+    </div>
+    <div style="width: 80%;height:60px;margin:0 auto;border-top:1px solid #9c9c9c;opacity:0.4;margin-top: 80px;" class="layui-hide-xs"></div>
+    
+    
+    <div class="pannel layui-hide-xs">
+            <div class="pannel-bottom">
+                <div class="pannel-bottom_img"></div>
+                <div class="pannel-bottom-title">修改服务器</div>
+                <div class="pannel-bottom-slogan">他们都推荐超级简历</div>
+
+                
+                <div class="pannel-bottom-swiper">
+                    <div class="pannel-bottom-left layui-hide-xs"><img src="./images/28.png" alt=""></div>
+                        <div class="layui-carousel layui-hide-xs" id="test3" lay-filter="test4" style="margin: 0 auto;">
+                                <div carousel-item="" style="overflow:initial;">
+                                  <div  style="background: #fff;" class="cc">作为一个专业猎头，我看的职位是比较高级的，但是拿到的简历也是五花八门各种样子的都有。为了能够更好的把他们展示给雇主单位,很多简历我都会和候选人详聊之后重新制作。一般我都是 国外的编辑器和Word按照我做好的习惯模板去制作，直到发现超级简历，比自己做好的模板还要方便快捷，确实是我用过最好用的编辑器，希望超级简历能够开发能让我们更好管理简历的功能就更好了。
+                                        <div class="a layui-hide-xs" style="position:absolute; top:170px;left: 350px;">
+                                            <div class="a_img"><img src="./images/23.png" alt=""></div>
+                                            <div class="a_title">刘萌萌</div>
+                                            <div class="a_text">互联网公司猎头</div>
+                                        </div>
+                                    </div>
+    
+                                  <div style=" background: #fff;" class="cc">我每年会看上千份简历，好的简历基本上一眼就能看出来。大多数求职者即便失败了也不会意识到，从简历的样式和逻辑他就已经被刷下去了。说实话，10秒内看不到重点的简历就会让我很烦躁，尤其是一些各种图表、文字没有内容、简历过长等等信息展示不清楚的简历都不会再看第二眼。 超级简历生成的简历非常清晰专业，让人眼前一亮，我希望我收到的每份简历都能是这个样子。
+                                      <div class="a" style="position:absolute; top:170px;left: 330px;">
+                                          <div class="a_img"><img src="./images/25.png" alt=""></div>
+                                          <div class="a_title">张晓寒</div>
+                                          <div class="a_text">基金人力资源招聘总监</div>
+                                      </div>
+                                  </div>
+                                  <div style=" background: #fff;" class="cc">真的很喜欢超级简历这个产品，我的简历都是用超级简历做出来的，很方便,且做出来特别漂亮和高大上。正好借这个机会，向贵团队致谢，感谢你们开发出这款产品，给我们求职狗帮了很大的忙!我也把这个产品推荐给了身边几个朋友，不过都是好朋友，关系不好的不舍的推荐.. .不要怪我， 这款产品真的好，再次致谢!
+                                      <div class="a" style="position:absolute; top:170px;left: 330px;">
+                                          <div class="a_img"><img src="./images/24.png" alt=""></div>
+                                          <div class="a_title">李首凯</div>
+                                          <div class="a_text">工商管理学院大四学生</div>
+                                      </div>
+                                  </div>
+                                  <div style="background: #fff;" class="cc">通过WonderCV制作的简历让我拿到了第一个Offer, 真的非常感谢!我之前是拿同学的简历模板，也曾在网上下载所谓的“漂亮模版”，在排版修改上反而又花了很多时间，且不好意思的说，因为照搬模板给的经历更是给自己求职路上埋坑。了超级简历我才知道怎么去总结和描写自己的经历，专业高级就更不用说了，完全不用在排版上再纠结真的是很感动，作为超级简历的铁杆粉，真诚的推荐给将要迈入职场的各位同学!
+                                      <div class="a" style="position:absolute; top:170px;left: 345px;">
+                                          <div class="a_img"><img src="./images/26.png" alt=""></div>
+                                          <div class="a_title">黄涛 Cydia</div>
+                                          <div class="a_text">人民大学应届生</div>
+                                      </div>
+                                  </div>
+                                </div>
+                                
+                        </div> 
+                        
+                      <div class="pannel-bottom-right layui-hide-xs"><img src="./images/29.png" alt=""></div>
+                      <div class="layui-carousel layui-hide-md" id="test1" lay-filter="test1" style="margin: 0 auto;">
+                            <div carousel-item="" style="overflow:initial;">
+                              <div  style="background: #fff;" class="cc">作为一个专业猎头，我看的职位是比较高级的，但是拿到的简历也是五花八门各种样子的都有。为了能够更好的把他们展示给雇主单位,很多简历我都会和候选人详聊之后重新制作。一般我都是 国外的编辑器和Word按照我做好的习惯模板去制作，直到发现超级简历，比自己做好的模板还要方便快捷，确实是我用过最好用的编辑器，希望超级简历能够开发能让我们更好管理简历的功能就更好了。
+                                    <div class="a">
+                                        <div class="a_img"><img src="./images/23.png" alt=""></div>
+                                        <div class="a_title">刘萌萌</div>
+                                        <div class="a_text">互联网公司猎头</div>
+                                    </div>
+                                </div>
+
+                              <div style=" background: #fff;" class="cc">我每年会看上千份简历，好的简历基本上一眼就能看出来。大多数求职者即便失败了也不会意识到，从简历的样式和逻辑他就已经被刷下去了。说实话，10秒内看不到重点的简历就会让我很烦躁，尤其是一些各种图表、文字没有内容、简历过长等等信息展示不清楚的简历都不会再看第二眼。 超级简历生成的简历非常清晰专业，让人眼前一亮，我希望我收到的每份简历都能是这个样子。
+                                  <div class="a">
+                                      <div class="a_img"><img src="./images/25.png" alt=""></div>
+                                      <div class="a_title">张晓寒</div>
+                                      <div class="a_text">基金人力资源招聘总监</div>
+                                  </div>
+                              </div>
+                              <div style=" background: #fff;" class="cc">真的很喜欢超级简历这个产品，我的简历都是用超级简历做出来的，很方便,且做出来特别漂亮和高大上。正好借这个机会，向贵团队致谢，感谢你们开发出这款产品，给我们求职狗帮了很大的忙!我也把这个产品推荐给了身边几个朋友，不过都是好朋友，关系不好的不舍的推荐.. .不要怪我， 这款产品真的好，再次致谢!
+                                  <div class="a">
+                                      <div class="a_img"><img src="./images/24.png" alt=""></div>
+                                      <div class="a_title">李首凯</div>
+                                      <div class="a_text">工商管理学院大四学生</div>
+                                  </div>
+                              </div>
+                              <div style="background: #fff;" class="cc">通过WonderCV制作的简历让我拿到了第一个Offer, 真的非常感谢!我之前是拿同学的简历模板，也曾在网上下载所谓的“漂亮模版”，在排版修改上反而又花了很多时间，且不好意思的说，因为照搬模板给的经历更是给自己求职路上埋坑。了超级简历我才知道怎么去总结和描写自己的经历，专业高级就更不用说了，完全不用在排版上再纠结真的是很感动，作为超级简历的铁杆粉，真诚的推荐给将要迈入职场的各位同学!
+                                  <div class="a">
+                                      <div class="a_img"><img src="./images/26.png" alt=""></div>
+                                      <div class="a_title">黄涛 Cydia</div>
+                                      <div class="a_text">人民大学应届生</div>
+                                  </div>
+                              </div>
+                            </div>
+                            
+                    </div>
+                </div>
+    
+                <div class="pannel-bottom-company layui-hide-xs" style="width:100%;">
+                  <img width="100%" src="./images/27.png" alt="">
+                </div>
+                
+              
+            </div>
+            
+        </div>
+
+    <div id="panel-mid"  class="layui-hide-md">
+       
+            <h2>  
+                专业、高效的简历修改与求职指导服务
+            </h2>
+        
+           <img src="./layui/images/666.png" alt="" style="width: 100%; margin-top: 40px;">  
+         
+
+
+            <div class="tu" style="width: 100%;margin-left: 20px;margin-top: 30px; ">
+           <ul style="letter-spacing: 3px;width: 90%; margin-top: 10px;">
+                <li>当你投递了许多简历，却都没有收到回复，不知道自己为什么过滤掉；</li>
+                <li>当你找不到自己的亮点，“卖”不出自己：工作经历和个人资质不突出；对想去的岗位缺乏针对性；必须要素缺失；
+                    没有抓住重点展示出最重要的能力。也许履历根本比不上你的人得到了offer，但你却没有；</li>
+                <li>当你不知道如何处理自身劣势；空档期怎么写、被公司裁员怎么写、因为父母身体不好而搬迁怎么写；</li>    
+            </ul>
+        </div>
+            <p style="line-height: 30px;letter-spacing: 1px;"> 针对性的简历修改服务能够帮助求职者更好的认识并总结自己的竞争力，快速找到适合自己的好工作。</p>
+            <button data-method="offset" data-type="auto" class="kfzx layui-btn-normal">资讯客服</button>
+    </div>
+    <div id="x" class="layui-hide-md">
+        <h2>修改服务反馈</h2>
+        <p>他们都推荐超级简历</p>
+    </div>
+    <div id="end" class="layui-hide-md">
+        <img src="./layui/images/777.png">
+        <p>Anna Xu</p>
+        <a>申请麦肯锡咨询全职</a>
+        <div id="text">
+            <p>超级简历是我用过最好最专业的求职网站， 没有之一！我一开始抱着试试看的心情，没想到我留言后立刻得到了很真诚和详细的回复，
+                当时真的有被感动到。在后面几天的接触中，更像是像真的导师一样给我指点和鼓励， 对我提的即使很基本的问题也都一一耐心解答，
+                陪我走过了申请前期很担心害怕和无助的一段。我选的是VIP项目，非常物超所值，当天晚上就打电话询问我的情况，制定简历框架，
+                等我修改以后，给我的反馈也很及时和有效，甚至每个词都愿意跟我讨论，只为让简历更加完美。 真心推荐“超级简历”给大家，
+                确确实实会让我们在求职路上走的更远更久更高效~
+            </p> 
+
+        </div>
+
+    </div>
+    
+    <div class="layui-hide-md" style="text-align: center;margin-top: 50px;color: #404040;font-size: 14px;">
+        超级简历的用户成功进入了这些公司
+    </div>
+    <div style="width: 100%; padding-top: 10px;" class="layui-hide-md">
+            <img src="./layui/images/888.png" style="width: 100%;height: 70px;">
+    </div>
+</div>
+<footer class="layui-hide-xs">
+        <div class="layui-row  footer_1">
+          <div class="layui-col-md1 layui-col-md-offset1 footer_2"><img src="./images/logo.png" alt="" style="display: block;"><img src="./images/erweima.png" alt=""></div>
+          <div class="layui-col-md1 footer_2"></div>
+          <div class="layui-col-md6 footer_2">
+                <div class="layui-col-md2 ">
+                    <ul>
+                            <li><a href=""style=" color: #9B9B9B;">联系我们</a></li>
+                            <li><a href="">在线客服</a></li>
+                            <li><a href="">微信</a></li>
+                            <li><a href="">微博</a></li>
+                            <li><a href="">知乎</a></li>
+                    </ul>
+                </div>
+                <div class="layui-col-md2">
+                    <ul>
+                    <li><a href=""style=" color: #9B9B9B;">关于我们</a></li>
+                    <li><a href="">产品介绍</a></li>
+                    <li><a href="">使用条款</a></li>
+                    <li><a href="">隐私协议</a></li>
+                    <li><a href="">加入我们</a></li>
+                    <li><a href="">网站地图</a></li>
+                    </ul>
+                    </div>
+                <div class="layui-col-md2">
+                    <ul>
+                        <li><a href=""style=" color: #9B9B9B;">快速进入</a></li>
+                        <li><a href="">首页</a></li>
+                        <li><a href="">我的简历</a></li>
+                        <li><a href="">简历攻略</a></li>
+                        <li><a href="">导师辅导</a></li>
+                        <li><a href="">职位列表</a></li>
+                       </ul></div>
+                <div class="layui-col-md3"><ul>
+                        <li><a href=""style=" color: #9B9B9B;">简历模板</a></li>
+                        <li><a href="">学生简历模板</a></li>
+                        <li><a href="">英文简历模板</a></li>
+                        <li><a href="">程序员简历模板</a></li>
+                        <li><a href="">经典工作简历模板</a></li>
+                        <li><a href="">春招礼包</a></li>
+                       </ul></div>
+                <div class="layui-col-md3"><ul>
+                        <li><a href=""style=" color: #9B9B9B;">其他产品</a></li>
+                        <li><a href="">下载App</a></li>
+                        <li><a href="">微信小程序</a></li>
+                        <li><a href="">大牛简历</a></li>
+                        <li><a href="">微信名片</a></li>
+                       </ul></div>
+          </div>
+          <div class=" layui-col-md1 footer_2"></div>
+          <div class="layui-col-md2 layui-col-md-offset-1  footer_3"><button class="layui-btn"><i class="layui-icon layui-icon-website" ></i>切换语言</button></div>
+          <div class="footer_4"><p>合作伙伴： <a>LinkedIn 智联招聘</a> <a>智联招聘</a>  <a>前程无忧</a>     <a>猎聘</a>   <a> 问卷网</a>   <a>华军软件园</a> <p>
+                友情链接（+QQ:409259639）： 无界空间 简历模板 考试宝典 人民大学在职研究生 <br>
+                大同人事考试网 留学培训 北京招聘会 武汉拓展培训 金华人才网 论文查重 查职位 <br>
+                建筑人才网 衡阳人才网 漳州人才网 IT在线教育 漳州公务员考试网 金融人才网 健康管理师</p></div>
+                <div class="footer_4" style="margin-top:30px; text-align: center"><p>© 2019  超级简历 WonderCV wondercv.com | 京ICP备17055181号</p> </div>
+        </footer>
+    <script type="text/javascript">
+        layui.use('element', function(){
+            var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+            
+            //监听导航点击
+            element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+            });
+        });
+            layui.use('element', function(){
+            var element = layui.element;
+            
+            //…
+        });
+        layui.use(['util', 'laydate', 'layer'], function(){
+        var util = layui.util,
+        laydate = layui.laydate,
+        layer = layui.layer;
+        //固定块
+        util.fixbar({
+            bar1: true
+            ,bar2: false
+            ,css: {right: 50, bottom: 100}
+            ,bgcolor: '#393D49'
+            ,click: function(type){
+            if(type === 'bar1'){
+                layer.msg('icon是可以随便换的')
+            } else if(type === 'bar2') {
+                layer.msg('两个bar都可以设定是否开启')
+            }
+            }
+        });
+    });
+        //小轮播
+        layui.use(['carousel', 'form'], function(){
+        var carousel = layui.carousel
+        ,form = layui.form;
+        
+   //设定各种参数
+   var ins3 = carousel.render({
+    elem: '#test3'
+    ,width: '800px'
+    ,height: '200px'
+    ,background:'#fff'
+    ,indicator:'outside'
+  });
+  //图片轮播
+  carousel.render({
+    elem: '#test10'
+    ,width: '778px'
+    ,height: '440px'
+    ,interval: 5000
+  });
+  
+  //事件
+  carousel.on('change(test4)', function(res){
+    console.log(res)
+  });
+  
+  var $ = layui.$, active = {
+    set: function(othis){
+      var THIS = 'layui-bg-normal'
+      ,key = othis.data('key')
+      ,options = {};
+      
+      othis.css('background-color', '#5FB878').siblings().removeAttr('style'); 
+      options[key] = othis.data('value');
+      ins3.reload(options);
+    }
+  };
+  
+  //监听开关
+  form.on('switch(autoplay)', function(){
+    ins3.reload({
+      autoplay: this.checked
+    });
+  });
+  
+  $('.demoSet').on('keyup', function(){
+    var value = this.value
+    ,options = {};
+    if(!/^\d+$/.test(value)) return;
+    
+    options[this.name] = value;
+    ins3.reload(options);
+  });
+
+});
+        //鼠标移入移出事件
+        $(function(){
+            $('.language').hover(function(){
+                $(this).nextAll(".language_text").show();
+            },function(){
+                $(this).nextAll(".language_text").hide();
+            });
+            $('.app1').hover(function(){
+                $(this).nextAll(".app").show();
+            },function(){
+                $(this).nextAll(".app").hide();
+            });
+        });
+        //弹出层
+        layui.use('layer', function(){ //独立版的layer无需执行这一句
+        var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+  
+  //触发事件
+  var active = {
+    offset: function(othis){
+      var type = othis.data('type')
+      ,text = othis.text();
+      layer.open({
+        type: 1
+        ,anim: 1
+        ,title: false
+        ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+        ,id: 'layerDemo'+type //防止重复弹出
+        ,area: ['400px', '400px']
+        ,content: $('#z')
+        ,closeBtn: 1
+        ,btnAlign: 'c' //按钮居中
+        ,shade: 0 //不显示遮罩
+        ,yes: function(){
+          layer.closeAll();
+        }
+      });
+    }
+  };
+  
+  $('#layerDemo .layui-btn').on('click', function(){
+    var othis = $(this), method = othis.data('method');
+    active[method] ? active[method].call(this, othis) : '';
+  });
+  
+});
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    
+    <script src="./layui/layui.js"></script>
+    <title>名企内推</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: "微软雅黑";
+        box-sizing: border-box;
+    }
+
+.asd{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background: #F5F5F7;
+}
+@media (max-width: 768px){
+.layui-fluid{
+        width: 100%;
+        padding: 0;
+    }
+}
+.file-index-container {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 80px;
+    display: flex;
+    align-items: flex-start;
+ 
+}
+@media (max-width: 768px){
+.file-index-container {
+    width: 100%;
+    margin-top: 0 !important;
+}}
+.file-left-pannel {
+    width: 272px;
+    position: relative;
+
+}
+.infos {
+    margin-bottom: 20px;
+}
+.l-c {
+    background: #fff;
+    padding: 0 24px;
+    overflow: auto;
+}
+.no_sign_in {
+    text-align: center;
+}
+.user-info {
+    position: relative;
+    padding-top: 22px;
+}
+.avatar{
+    margin-bottom: 41px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #404040;
+    display: block;
+    line-height: 16px;
+}
+.avatar img {
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    line-height: 70px;
+    margin: 0 auto 15px auto;
+    text-align: center;
+
+}
+.denglu {
+    background: #ff4f4c;
+    margin-bottom: 23px
+}
+
+
+.file-left-pannel>a {
+    background: #fff;
+    width: 272px;
+    position: relative;
+}
+.active{
+    color: #ff4f4c;
+}
+.middle-message.no-space {
+    margin-bottom: 0;
+    border-bottom: 1px solid #eee;
+}
+#first::before{
+    border-left: 3px solid #FF453C;
+    content: "";
+    width: 3px;
+    height: 26px;
+    position: absolute;
+    top: 19px;
+    left: 0;
+}
+.middle-message {
+    border: none;
+    color: #424242;
+    line-height: 23px;
+    padding: 19px 18px;
+    height: 63px;
+    background: #fff;
+    position: relative;
+}
+.middle-message span {
+    color: #ff4f4c;
+    font-size: 12px;
+}
+.file-left-pannel>a .icon {
+    margin-left: 1px;
+    margin-right: 20px;
+    position: relative;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+    display: inline-block;
+}
+.file-left-pannel>a .icon img{
+    display: block;
+    width: 100%;
+    border: 0;
+}
+.file-left-pannel .middle-message span.title {
+    font-size: 14px;
+    color: #404040;
+}
+.interview-count {
+    display: inline-block;
+}
+.right{
+    font-size: 18px;
+    font-weight: bold;
+    top: 19px;
+    right: 0;
+    position: absolute;
+    margin-right: 14px;
+    color: #9C9C9C;
+}
+.wechat-scan-feedback {
+    margin: 0 auto;
+    margin-top: 24px;
+    background: #fff;
+    width: 272px;
+    padding: 12px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.06);
+}
+.wechat-scan-feedback .title {
+    font-size: 16px;
+    font-weight: 800;
+    margin-top: 12px;
+}
+.wechat-scan-feedback .sub-title {
+    color: #9c9c9c;
+    margin-top: 6px;
+    margin-bottom: 8px;
+}
+.wechat-scan-feedback .bottom {
+    color: #9c9c9c;
+    margin-top: 12px;
+}
+
+
+
+.file-right-panel {
+    width: 900px;
+    margin-left: 24px;
+    background: #fff;
+    margin-bottom: 30px;
+}
+.intentions-container {
+    background: inherit;
+}
+
+@media (max-width: 768px){
+.intentions-container {
+    margin-top: 44px;
+}
+}
+@media (max-width: 768px){
+.file-right-panel {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: calc(60px + env(safe-area-inset-bottom)) !important;
+
+}
+}
+
+
+.panel-content{
+    width: 900px;
+    background: #fff;
+    margin-bottom: 22px;
+    padding: 15px 24px;
+    overflow-x: hidden;
+}
+@media (max-width: 768px){
+.panel-content {
+    margin-top: 0;
+    width: 100%;
+    padding: 0;
+    overflow-x: initial;
+}
+}
+.tab-bar {
+    height: 40px;
+    border-bottom: 1px solid #EEF0F5;
+    margin-bottom: 35px;
+}
+@media (max-width: 768px){
+.tab-bar {
+    margin-bottom: 0;
+    left: 0;
+    line-height: 30px;
+    padding-top: 10px;
+    border: none;
+}
+}
+.full-width {
+    width: 900px;
+    position: relative;
+    left: -24px;
+    padding: 0 24px;
+}
+@media (max-width: 768px){
+    .full-width{
+        width: 100%;
+    }
+}
+.profession{
+    display: none;
+}
+@media (max-width: 768px){
+    .profession{
+    display: inline-block;
+    max-width: 120px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    font-weight: 600;
+    }
+}
+.tab-bar li.active {
+    border-bottom: 2px solid #404040;
+}
+@media (max-width: 768px){
+    .tab-bar li.active {
+    border-bottom: 2px solid #ff4f4c;
+}
+}
+li {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.tab-bar li {
+    height: 39px;
+    float: left;
+    font-size: 16px;
+    margin-right: 20px;
+}
+@media (max-width: 768px){
+    .tab-bar li {
+    float: right;
+    margin-right: 0;
+    margin-left: 20px;
+}
+}
+.tab-bar li.fr {
+    position: relative;
+    margin-right: 0;
+    top: 5px;
+    float: right;
+    font-size: 14px;
+    color: #909090;
+    line-height: 12px;
+}
+@media (max-width: 767px){
+    .tab-bar li.fr {
+        display: none;
+    }
+}
+.job-content{
+    width: 100%;
+}
+
+.jobs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+@media (max-width: 768px){
+    .jobs{
+        width: 100%;
+    }
+}
+.card {
+    width: 418px;
+    margin-bottom: 16px;
+    background: #fff;
+    border: 1px solid #ececec;
+    padding: 24px;
+    padding-bottom: 0;
+    position: relative;
+}
+@media (max-width: 768px){
+    .card:first-child {
+    border-top-width: 3px;
+}
+}
+@media (max-width: 768px){
+.jobs .card {
+    width: 100%;
+    border: none;
+    margin-bottom: 0;
+    border-top: 8px solid #F8F8FA;
+}}
+.file-right-panel a {
+    color: #404040;
+}
+.job_post{
+    height: 18px;
+    width: 260px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #404040;
+    line-height: 18px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    float: left;
+    margin-right: 9px;
+    margin-bottom: 7px;
+}
+@media (max-width: 768px){
+    .job_post {
+    max-width: calc(100% - 104px);
+    font-size: 16px;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+}
+.money {
+    float: right;
+    width: 99px;
+    height: 18px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ff4f4c;
+    line-height: 18px;
+}
+.clearfix::before{
+    content: " ";
+    display: table;
+}
+.clearfix::after{
+    content: " ";
+    display: table;
+    clear: both;
+}
+.desc {
+    height: 12px;
+    line-height: 12px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #909090;
+    margin-bottom: 18px;
+}
+@media (max-width: 768px){
+    .desc {
+    max-width: calc(100% - 54px) !important;
+    width: auto;
+}
+}
+.desc span {
+    display: block;
+    float: left;
+    padding-right: 5px;
+    margin-right: 5px;
+}
+.company {
+    overflow: auto;
+}
+.logo {
+    width: 43px;
+    height: 43px;
+    float: left;
+    margin-right: 8px;
+    overflow: hidden;
+    border: 1px solid #f4f5f8;
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 43px;
+    display: block;
+    margin: auto;
+}
+.company .desc {
+    float: left;
+    width: 316px;
+    height: 40px;
+    overflow: hidden;
+}
+.company .desc .title {
+    height: 14px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #404040;
+    line-height: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 4px 0 10px 0;
+}
+.company .desc span {
+    padding-right: 8px;
+    margin-right: 8px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+}
+.btn-theme-reverse {
+    border: 1px solid #ff4f4c !important;
+    background: #FFFFFF !important;
+    color: #ff4f4c !important;
+}
+.signin-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 47px;
+    line-height: 47px;
+    margin-top: 8px;
+}
+@media (max-width: 767px){
+    .signin-btn{
+        display: none;
+    }
+}
+
+header{
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    padding: 1em 0;
+    height: 3em;
+    background: #fff;
+}
+header .header_nav{
+    width: 94%;
+    margin: 0 auto;
+    line-height: 35px;
+    background-color: #fff;
+}
+
+header .header_nav .header_nav_list ul li{
+    float: left;
+    
+    margin-right: 9%;
+}
+header .header_nav .header_nav_list ul li.active{
+    border-bottom: 2px solid red;
+}
+header .header_nav .header_nav_list ul li a{
+    color:#404040;
+}
+header .header_nav .header_nav_list ul li a.active{
+    color:#ff4f4c;
+}
+header .header_nav .header_nav_list ul li a:hover{
+    color: #ff4f4c;
+}
+header .header_nav .header_nav_right i{
+    font-size: 20px;
+    color: #404040;
+    margin-right: 16px;
+    float: left;
+}
+.language_text{
+    display: none;
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    top: 130%;
+    left: 10%;
+    color: #ff4f4c;
+    line-height: 28px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+    background: #fff;
+}
+.app{
+    display: none;
+    width: 240px;
+    height: 300px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    cursor: pointer;
+    background-color: #fff; 
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+}
+.layui-tab-title li{
+    width: 100px;
+    color: #FF3D3D;
+    border: 1px solid #FF3D3D;
+}
+.layui-tab-title .layui-this{
+    display: block;
+    width: 100px;
+    margin-bottom: 10px; 
+    margin: 0 auto;
+    border: none;
+    background-color: #ff4f4c;
+}
+header .header_nav .header_nav_right .line{
+    height: 26px;
+    width: 2px;
+    background: #DEDFE1;
+    margin-right: 12px;
+    float: left;
+    margin-top: 4px;
+}
+header .header_nav .header_nav_right .link .link_btn{
+    display: inline-block;
+    width: 80px;
+    border-radius: 2px;
+    margin-left: 12px;
+    text-align: center;
+    color: #ff4f4c;
+    border: 1px solid #ff4f4c;
+}
+header .header_nav .header_nav_right .link .link_btn.active{
+    background: #ff4f4c !important;
+    color: #FFFFFF !important;
+}
+header .header_nav .header_nav_right .link .link_btn:hover{
+    background: #ff4f4c !important;
+    color: #FFFFFF !important;
+}
+</style>
+<body>
+        <header>
+        
+                <div class="layui-row header_nav">
+                    <div class="layui-col-md3 layui-col-sm3 layui-col-xs9">
+                        <a href="./index.html"><img width="115px" src="./images/logo.png" alt=""></a>
+                    </div>
+                    <div class="layui-col-xs3 layui-col-sm3 layui-hide-md">
+                        <a href="" style="
+                            display: inline-block;
+                            width: 66px;
+                            height: 30px;
+                            line-height: 30px;
+                            text-align: center;
+                            font-size: 13px;
+                            padding: 0px;
+                            margin-top: -4px;
+                            background-color: #FF4F4C;
+                            color: #fff;
+                            margin-left: 10px;
+                            margin-right: 0;
+                            ">导入简历</a>
+                    </div>
+                    <div class="layui-col-md6 layui-hide-xs header_nav_list">
+                        <ul>
+                            <li><a href="./jlmb.html">简历模板</a></li>
+                            <li><a href="./qzx.html">求职信</a></li>
+                            <li><a href="">简历攻略</a></li>
+                            <li><a href="./jlzd.html">简历诊断</a></li>
+                            <li class="active"><a class="active" href="./mqnt.html">名企内推</a></li>
+                        </ul>
+                    </div>
+                    <div class="layui-col-md3 layui-hide-xs header_nav_right">
+                        
+                        <i class="layui-icon layui-icon-website language" style="margin-left: 18px; cursor: pointer;"></i>
+                        
+                        <div class="language_text">
+                            <div class="language_text_t">中文</div>
+                            <div class="language_text_b" style="color: #404040;">EN</div>
+                        </div>
+                            
+                        <i class="layui-icon layui-icon-cellphone app1"></i>
+                        <div class="layui-tab app">
+                            
+                            <div class="layui-tab-content" style="width: 218px; text-align:center;">
+                                <div class="layui-tab-item layui-show">
+                                    <h5>扫码下载app 同步编辑</h5>
+                                    <img width="140px" src="./images/app.png" alt="">
+                                </div>
+                                <div class="layui-tab-item">
+                                    <h5>扫码关注 微信同步</h5>
+                                    <img width="140px" src="./images/gongzhonghao.png" alt="">
+                                </div>
+                            </div>
+                            <ul class="layui-tab-title" style="border: none; text-align:center;">
+                                <li class="layui-this" style="margin-bottom: 15px;">App</li>
+                                <li>微信</li>
+                                </ul>
+                            </div>
+                        <div class="line"></div>
+                        <div class="link">
+                            <a href="./denglu.html" class="link_btn">登陆</a>
+                            <a href="./zhuce.html" class="link_btn active">注册</a>
+                        </div>
+                        </div>
+                    </div>
+                </header>
+    <div class="asd">
+    <div class="layui-fluid">
+        <div class="layui-row file-index-container" >
+            <div class="layui-col-md6 layui-hide-xs file-left-pannel">
+                <div class="l-c infos">
+                    <div class="user-info no_sign_in">
+                        <div class="avatar">
+                            <img src="./images/default_forum_icon.png">
+                        </div>
+                        <div class="layui-btn layui-btn-danger denglu"
+                        >立即登录</div>
+                    </div>
+                </div>
+              <a href="" class="active" style="font-weight: 600;">
+                  <div class="middle-message no-space" id="first">
+                     <span class="icon">
+                         <img src="./images/recruit_infos_hover.png" alt="">
+                     </span>
+                     <span class="title">内推职位</span>
+                     <div class="interview-count">
+                         <div class="layui-icon layui-icon-right right">
+                         </div>
+                     </div>
+                  </div>
+              </a>
+              <a href="" class="active" id="aa">
+                    <div class="middle-message no-space">
+                       <span class="icon">
+                           <img src="./images/in_recruit_infos.png" alt="">
+                       </span>
+                       <span class="title">领英职位</span>
+                       <div class="interview-count">
+                           <div class="layui-icon layui-icon-right right">
+                           </div>
+                       </div>
+                    </div>
+                </a>
+                <a href="" class="active" id="aa">
+                        <div class="middle-message no-space">
+                           <span class="icon">
+                               <img src="./images/campus_recruiting.png" alt="">
+                           </span>
+                           <span class="title">校招网申</span>
+                           <div class="interview-count">
+                               <div class="layui-icon layui-icon-right right">
+                               </div>
+                           </div>
+                        </div>
+                </a>
+            <div class="wechat-scan-feedback">
+                    <div class="title">手机电脑，同步管理</div>
+                    <div class="sub-title">微信上也可以随时查看、 投递简历 </div>
+                    <div class="qr-content">
+                        <img src="./images/erweima.png" width="150" height="150">
+                    </div>
+                    <div class="bottom">微信扫码 管理投递 </div>
+            </div>
+            </div>
+
+
+            <div class="layui-col-md6 layui-col-xs12 file-right-panel intentions-container">
+                <div class="panel-content">
+                    <ul class="tab-bar full-width">
+                        <span class="profession"></span>
+                        <li class="active">
+                            <a href="">内推职位</a>
+                        </li>
+                        <li class="fr hidden-xs">
+                            <span>以下为热门内推，登录后根据你的简历匹配并推荐职位</span>
+                        </li>
+                    </ul>
+                    <div class="job-content">
+                        <div class="jobs">
+                            <div class="card">
+                                <a href="" style="width: 100%;">
+                                <div class="job_post">投资助理实习生</div>
+                                <div class="money">面议</div>
+                                <div class="clearfix"></div>
+                                <div class="desc">
+                                    <span>深圳 | 经验不限 | 本科及以上学历 </span>
+                                </div>
+                                <div class="company">
+                                    <div class="logo">
+                                        <img src="./images/77.png" alt="">
+                                    </div>
+                                    <div class="desc">
+                                        <div class="title">时代伯乐</div>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div class="card">
+                                    <a href="" style="width: 100%;">
+                                    <div class="job_post">法律实习生</div>
+                                    <div class="money">面议</div>
+                                    <div class="clearfix"></div>
+                                    <div class="desc">
+                                        <span>广州 | 经验不限 | 本科及以上学历 </span>
+                                    </div>
+                                    <div class="company">
+                                        <div class="logo">
+                                            <img src="./images/50.png" alt="">
+                                        </div>
+                                        <div class="desc">
+                                            <div class="title">虎牙</div>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="card">
+                                        <a href="" style="width: 100%;">
+                                        <div class="job_post">总部IT岗实习生</div>
+                                        <div class="money">面议</div>
+                                        <div class="clearfix"></div>
+                                        <div class="desc">
+                                            <span>上海 | 经验不限 | 本科及以上学历 </span>
+                                        </div>
+                                        <div class="company">
+                                            <div class="logo">
+                                                <img src="./images/51.png" alt="">
+                                            </div>
+                                            <div class="desc">
+                                                <div class="title">东原集团</div>
+                                                <span>房地产/建筑/物业 | 民营企业 | 100-500人</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    </div>
+
+                                    <div class="card">
+                                            <a href="" style="width: 100%;">
+                                            <div class="job_post">HRBP实习生</div>
+                                            <div class="money">面议</div>
+                                            <div class="clearfix"></div>
+                                            <div class="desc">
+                                                <span>北京 | 经验不限 | 本科及以上学历 </span>
+                                            </div>
+                                            <div class="company">
+                                                <div class="logo">
+                                                    <img src="./images/52.png" alt="">
+                                                </div>
+                                                <div class="desc">
+                                                    <div class="title">字节跳动</div>
+                                                    <span>互联网 | 民营企业 | 500人以上
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        </div>
+
+                                         <div class="card">
+                                                <a href="" style="width: 100%;">
+                                                <div class="job_post">供应链管理实习生【可转正】</div>
+                                                <div class="money">面议</div>
+                                                <div class="clearfix"></div>
+                                                <div class="desc">
+                                                    <span>深圳 | 经验不限 | 本科及以上学历 </span>
+                                                </div>
+                                                <div class="company">
+                                                    <div class="logo">
+                                                        <img src="./images/53.png" alt="">
+                                                    </div>
+                                                    <div class="desc">
+                                                        <div class="title">迪卡侬</div>
+                                                        <span></span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                     </div> <div class="card">
+                                <a href="" style="width: 100%;">
+                                <div class="job_post">项目经理助理实习生</div>
+                                <div class="money">面议</div>
+                                <div class="clearfix"></div>
+                                <div class="desc">
+                                    <span>广州 | 经验不限 | 本科及以上学历 </span>
+                                </div>
+                                <div class="company">
+                                    <div class="logo">
+                                        <img src="./images/54.png" alt="">
+                                    </div>
+                                    <div class="desc">
+                                        <div class="title">天弘基金</div>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            
+                            <div class="card">
+                                    <a href="" style="width: 100%;">
+                                    <div class="job_post">投资分析实习生</div>
+                                    <div class="money">面议</div>
+                                    <div class="clearfix"></div>
+                                    <div class="desc">
+                                        <span>上海 | 经验不限 | 本科及以上学历 </span>
+                                    </div>
+                                    <div class="company">
+                                        <div class="logo">
+                                            <img src="./images/55.png" alt="">
+                                        </div>
+                                        <div class="desc">
+                                            <div class="title">德同资本</div>
+                                            <span>金融</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                </div>
+
+                                <div class="card">
+                                        <a href="" style="width: 100%;">
+                                        <div class="job_post">北京财务中心实习生</div>
+                                        <div class="money">面议</div>
+                                        <div class="clearfix"></div>
+                                        <div class="desc">
+                                            <span>北京 | 经验不限 | 本科及以上学历 </span>
+                                        </div>
+                                        <div class="company">
+                                            <div class="logo">
+                                                <img src="./images/56.png" alt="">
+                                            </div>
+                                            <div class="desc">
+                                                <div class="title">爱建信托</div>
+                                                <span>金融</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    </div>
+
+                                    <div class="card">
+                                            <a href="" style="width: 100%;">
+                                            <div class="job_post">产品部实习生招聘</div>
+                                            <div class="money">面议</div>
+                                            <div class="clearfix"></div>
+                                            <div class="desc">
+                                                <span>深圳 | 经验不限 | 本科及以上学历 </span>
+                                            </div>
+                                            <div class="company">
+                                                <div class="logo">
+                                                    <img src="./images/57.png" alt="">
+                                                </div>
+                                                <div class="desc">
+                                                    <div class="title">安信基金</div>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        </div>
+
+                                        <div class="card">
+                                                <a href="" style="width: 100%;">
+                                                <div class="job_post">人力实习生</div>
+                                                <div class="money">面议</div>
+                                                <div class="clearfix"></div>
+                                                <div class="desc">
+                                                    <span>广州 | 经验不限 | 本科及以上学历 </span>
+                                                </div>
+                                                <div class="company">
+                                                    <div class="logo">
+                                                        <img src="./images/77.png" alt="">
+                                                    </div>
+                                                    <div class="desc">
+                                                        <div class="title">碧桂园</div>
+                                                        <span>房地产/建筑/物业 | 民营企业 | 500人以上</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                       <a href="" class="btn-theme-reverse signin-btn hidden-xs">登录查看你的内推职位</a>
+                                       <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    layui.use(['util', 'laydate', 'layer'], function(){
+        var util = layui.util,
+        laydate = layui.laydate,
+        layer = layui.layer;
+        //固定块
+        util.fixbar({
+            bar1: true
+            ,bar2: false
+            ,css: {right: 50, bottom: 100}
+            ,bgcolor: '#393D49'
+            ,click: function(type){
+            if(type === 'bar1'){
+                layer.msg('icon是可以随便换的')
+            } else if(type === 'bar2') {
+                layer.msg('两个bar都可以设定是否开启')
+            }
+            }
+        });
+    });
+</script>
+    
+</body>
+</html>

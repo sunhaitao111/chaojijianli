@@ -67,7 +67,7 @@
         ,title: false
         ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
         ,id: 'layerDemo'+type //防止重复弹出
-        ,area: '1015px'
+        ,area: '72%'
         ,content: $('#a')
         ,closeBtn: 1
         ,btnAlign: 'c' //按钮居中
@@ -120,7 +120,7 @@
         ,title: false
         ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
         ,id: 'layerDemo2'+type //防止重复弹出
-        ,area: '1015px'
+        ,area: '72%'
         ,content: $('#c')
         ,closeBtn: 1
         ,btnAlign: 'c' //按钮居中
@@ -146,7 +146,7 @@
         ,title: false
         ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
         ,id: 'layerDemo3'+type //防止重复弹出
-        ,area: '500px'
+        ,area: '90%'
         ,content: $('#d')
         ,closeBtn: 1
         ,btnAlign: 'c' //按钮居中
@@ -162,7 +162,27 @@
     active3[method] ? active3[method].call(this, othis3) : '';
   });
 });
-            </script>
+
+layui.use(['util', 'laydate', 'layer'], function(){
+        var util = layui.util,
+        laydate = layui.laydate,
+        layer = layui.layer;
+        //固定块
+        util.fixbar({
+            bar1: true
+            ,bar2: false
+            ,css: {right: 50, bottom: 100}
+            ,bgcolor: '#393D49'
+            ,click: function(type){
+            if(type === 'bar1'){
+                layer.msg('icon是可以随便换的')
+            } else if(type === 'bar2') {
+                layer.msg('两个bar都可以设定是否开启')
+            }
+            }
+        });
+    });
+</script>
             
     <style>
   
@@ -238,9 +258,76 @@
     #a,#b,#c,#d{
         display: none;
     }
+    #webstie{
+        width: 95%;
+        float: right;
+        line-height: 50px;
+        color: #9c9c9c;
+        font-size: 14px;
+    }
+    #webstie span{
+        color: #50a4ff;
+    }
+    #yd-banner{
+        width: 370px;
+        margin: auto;
+        text-align: center;
+    }
+    #yd-text{
+        font-size: 18px;
+        color:#404040;
+        font-weight: 800;
+        margin-top: 20px;
+        width: 93%;
+        float: right;
+    }
+    @media screen and (max-width:750px) {
+        
+    #an-title{
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    #an-title2{
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    #layerDemo a{
+        width: 100%;
+        text-align: center;
+    }
+    #layerDemo1 a{
+        width: 100%;
+        text-align: center;
+    }
+    #layerDemo2 a{
+        width: 100%;
+        text-align: center;
+    }
+    #layerDemo3 a{
+        width: 100%;
+        text-align: center;
+    }
+    #a img{
+        width: 100%;
+    }
+    #c img{
+        width: 100%;
+    }
+   
+    #d img{
+        width: 100%;
+        
+    }
+
+
+
+    }
     </style>
 </head>
 <body>
+    <div>
         <div id="z">
             <div class="z-img">
                 <img width="200px" src="./images/erweima.png" alt="">
@@ -265,6 +352,7 @@
         </div>
         <div id="d">
                 <img width="500px" src="./images/004.png" alt="">    
+                <img width="500px" src="./images/004.png" alt=""> 
             </div>
         <header>
         
@@ -276,7 +364,7 @@
                         <a href="" style="
                             display: inline-block;
                             width: 66px;
-                            height: 30px;
+                            
                             line-height: 30px;
                             text-align: center;
                             font-size: 13px;
@@ -290,11 +378,11 @@
                     </div>
                     <div class="layui-col-md6 layui-hide-xs header_nav_list">
                         <ul>
-                            <li><a href="./jlmb.html">简历模板</a></li>
-                            <li><a href="">求职信</a></li>
+                            <li class="active"><a class="active" href="./jlmb.html">简历模板</a></li>
+                            <li><a href="./qzx.html">求职信</a></li>
                             <li><a href="">简历攻略</a></li>
-                            <li><a href="">简历诊断</a></li>
-                            <li><a href="">名企内推</a></li>
+                            <li><a href="./jlzd.html">简历诊断</a></li>
+                            <li><a href="./mqnt.html">名企内推</a></li>
                         </ul>
                     </div>
                     <div class="layui-col-md3 layui-hide-xs header_nav_right">
@@ -331,11 +419,11 @@
                         </div>
                         </div>
                     </div>
-                </header>
-                <div class="layui-row resume-tp1">
+        </header>
+                <div class="layui-row resume-tp1 layui-hide-xs">
                         <div class="resume-title">选择你的简历模板</div>
                         <div class="resume-slongan">选对专业的简历模板，帮你提高 2 倍求职成功率</div>
-                        <div class="layui-row layui-hide-md" style="margin-top: 40px;">
+                        <!-- <div class="layui-row layui-hide-md" style="margin-top: 40px;">
                             <div class="layui-col-xs3 layui-row">
                                 <div class="layui-col-xs12"><img width="47px" src="./images/5.png" alt=""></div>
                                 <div class="layui-col-xs12" style="margin-top: 9px;font-size: 13px;color: #3f3f3f;">零经验</div>
@@ -370,8 +458,8 @@
                                 <div class="layui-col-xs12"><img width="47px" src="./images/12.png" alt=""></div>
                                 <div class="layui-col-xs12" style="margin-top: 9px;font-size: 13px;color: #3f3f3f;">程序员</div>
                             </div> 
-                        </div>
-                        <div class="layui-col-md12 resume-type layui-hide-xs">
+                        </div> -->
+                        <div class="layui-col-md12 resume-type ">
                             <ul class="layui-row template-list">
                                 <li class="col-xs-3 ">
                                 <div class="tp1-content">
@@ -543,9 +631,195 @@
                                     </div>    
                                     </li>
                             </ul>
-                        </div>
+                        </div> 
                     </div>
-
+                    <div class="layui-col-md12 resume-type layui-hide-md" style="margin-top:50px; ">
+                            <ul class="layui-row template-list">
+                                <li class="col-xs-3 ">
+                                <div class="tp1-content">
+                                    <div class="template-content ">
+                                        <div class="template-content flex-column align-items-center hidden" style="margin: 0 auto;width: 80%;text-align: center;">
+                                            <span class="template-img " >
+                                                <img src="./images/5.png"  style="margin-left: -30px">
+                                            </span>
+                                            <span class="layui-col-md12 template-title ">零经验实习模板</span>
+                                            <span class="layui-col-md12 template-desc">此模板适用于学生找实习，第一次工作，没有实习经历的同学</span>
+                                            <div class="c-and-e" style="width: 75%;">
+                                                <div style="display: inline-block">
+                                                    <a href="" style="margin: 75px 0 15px;">中文模板</a>   
+                                                </div>
+                                                <div>
+                                                    <a href="">英文模板</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                            </ul>
+                            <ul class="layui-row template-list">
+                                <li class="col-xs-3 ">
+                                <div class="tp1-content">
+                                    <div class="template-content ">
+                                        <div class="template-content flex-column align-items-center hidden" style="margin: 0 auto;width: 80%;text-align: center;">
+                                            <span class="template-img " >
+                                                <img src="./images/5.png"  style="margin-left: -30px">
+                                            </span>
+                                            <span class="layui-col-md12 template-title ">零经验实习模板</span>
+                                            <span class="layui-col-md12 template-desc">此模板适用于学生找实习，第一次工作，没有实习经历的同学</span>
+                                            <div class="c-and-e" style="width: 75%;">
+                                                <div style="display: inline-block">
+                                                    <a href="" style="margin: 75px 0 15px;">中文模板</a>   
+                                                </div>
+                                                <div>
+                                                    <a href="">英文模板</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                            </ul>
+                            <ul class="layui-row template-list">
+                                <li class="col-xs-3 ">
+                                <div class="tp1-content">
+                                    <div class="template-content ">
+                                        <div class="template-content flex-column align-items-center hidden" style="margin: 0 auto;width: 80%;text-align: center;">
+                                            <span class="template-img " >
+                                                <img src="./images/5.png"  style="margin-left: -30px">
+                                            </span>
+                                            <span class="layui-col-md12 template-title ">零经验实习模板</span>
+                                            <span class="layui-col-md12 template-desc">此模板适用于学生找实习，第一次工作，没有实习经历的同学</span>
+                                            <div class="c-and-e" style="width: 75%;">
+                                                <div style="display: inline-block">
+                                                    <a href="" style="margin: 75px 0 15px;">中文模板</a>   
+                                                </div>
+                                                <div>
+                                                    <a href="">英文模板</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                            </ul>
+                            <ul class="layui-row template-list">
+                                <li class="col-xs-3 ">
+                                <div class="tp1-content">
+                                    <div class="template-content ">
+                                        <div class="template-content flex-column align-items-center hidden" style="margin: 0 auto;width: 80%;text-align: center;">
+                                            <span class="template-img " >
+                                                <img src="./images/5.png"  style="margin-left: -30px">
+                                            </span>
+                                            <span class="layui-col-md12 template-title ">零经验实习模板</span>
+                                            <span class="layui-col-md12 template-desc">此模板适用于学生找实习，第一次工作，没有实习经历的同学</span>
+                                            <div class="c-and-e" style="width: 75%;">
+                                                <div style="display: inline-block">
+                                                    <a href="" style="margin: 75px 0 15px;">中文模板</a>   
+                                                </div>
+                                                <div>
+                                                    <a href="">英文模板</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                            </ul>
+                            <ul class="layui-row template-list">
+                                <li class="col-xs-3 ">
+                                <div class="tp1-content">
+                                    <div class="template-content ">
+                                        <div class="template-content flex-column align-items-center hidden" style="margin: 0 auto;width: 80%;text-align: center;">
+                                            <span class="template-img " >
+                                                <img src="./images/5.png"  style="margin-left: -30px">
+                                            </span>
+                                            <span class="layui-col-md12 template-title ">零经验实习模板</span>
+                                            <span class="layui-col-md12 template-desc">此模板适用于学生找实习，第一次工作，没有实习经历的同学</span>
+                                            <div class="c-and-e" style="width: 75%;">
+                                                <div style="display: inline-block">
+                                                    <a href="" style="margin: 75px 0 15px;">中文模板</a>   
+                                                </div>
+                                                <div>
+                                                    <a href="">英文模板</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                            </ul>
+                            <ul class="layui-row template-list">
+                                <li class="col-xs-3 ">
+                                <div class="tp1-content">
+                                    <div class="template-content ">
+                                        <div class="template-content flex-column align-items-center hidden" style="margin: 0 auto;width: 80%;text-align: center;">
+                                            <span class="template-img " >
+                                                <img src="./images/5.png"  style="margin-left: -30px">
+                                            </span>
+                                            <span class="layui-col-md12 template-title ">零经验实习模板</span>
+                                            <span class="layui-col-md12 template-desc">此模板适用于学生找实习，第一次工作，没有实习经历的同学</span>
+                                            <div class="c-and-e" style="width: 75%;">
+                                                <div style="display: inline-block">
+                                                    <a href="" style="margin: 75px 0 15px;">中文模板</a>   
+                                                </div>
+                                                <div>
+                                                    <a href="">英文模板</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                            </ul>
+                            <ul class="layui-row template-list">
+                                <li class="col-xs-3 ">
+                                <div class="tp1-content">
+                                    <div class="template-content ">
+                                        <div class="template-content flex-column align-items-center hidden" style="margin: 0 auto;width: 80%;text-align: center;">
+                                            <span class="template-img " >
+                                                <img src="./images/5.png"  style="margin-left: -30px">
+                                            </span>
+                                            <span class="layui-col-md12 template-title ">零经验实习模板</span>
+                                            <span class="layui-col-md12 template-desc">此模板适用于学生找实习，第一次工作，没有实习经历的同学</span>
+                                            <div class="c-and-e" style="width: 75%;">
+                                                <div style="display: inline-block">
+                                                    <a href="" style="margin: 75px 0 15px;">中文模板</a>   
+                                                </div>
+                                                <div>
+                                                    <a href="">英文模板</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                            </ul>
+                            <ul class="layui-row template-list">
+                                <li class="col-xs-3 ">
+                                <div class="tp1-content">
+                                    <div class="template-content ">
+                                        <div class="template-content flex-column align-items-center hidden" style="margin: 0 auto;width: 80%;text-align: center;">
+                                            <span class="template-img " >
+                                                <img src="./images/5.png"  style="margin-left: -30px">
+                                            </span>
+                                            <span class="layui-col-md12 template-title ">零经验实习模板</span>
+                                            <span class="layui-col-md12 template-desc">此模板适用于学生找实习，第一次工作，没有实习经历的同学</span>
+                                            <div class="c-and-e" style="width: 75%;">
+                                                <div style="display: inline-block">
+                                                    <a href="" style="margin: 75px 0 15px;">中文模板</a>   
+                                                </div>
+                                                <div>
+                                                    <a href="">英文模板</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                            </ul>
+                        </div>
+                    
 
 
 
@@ -564,16 +838,16 @@
        <!-- <button  class="layui-btn">居中弹出</button> -->
     </div>
     
-    <div id="an-title" class="layui-col-xs12">
+    <div id="an-title">
             使用超级简历拿到名企Offer
     </div>
-    <div id="an-title2">
+    <div id="an-title2" >
         已经通过超级简历，成功入职投行/咨询/BAT/五百强名企的大牛简历分享
     </div>
     <div id="net" class="layui-row">
-        <div class="layui-col-md1" style="height: 430px;"></div>
+        <div class="layui-col-md1 layui-hide-xs" style="height: 430px; "></div>
         <div class="layui-col-md10 layui-row" style="height:430px;">
-            <div id="net-l" class="layui-col-md3" >
+            <div id="net-l" class="layui-col-md3" style="text-align: center;" >
             <div class="site-demo-button" id="layerDemo" style="margin-bottom: 0;">
                 <button style="background: none; border:none"  data-method="offset" data-type="auto" class="layui-btn layui-btn-normal">
                     <img src="./images/001.jpg" >
@@ -605,6 +879,7 @@
                             </button>
                         </div>
                     </div>
+
             <!-- <div id="net-l" class="layui-col-md3" >
                 <img src="./images/002.png" >
                 <a href="">2019 清华应届生 | 腾讯产品经理全职</a>
@@ -623,6 +898,7 @@
     <div id="an" style="margin-top: 30px; margin-bottom: 50px;">
             <button  class="layui-btn">更多大牛简历</button>
     </div>
-
+</div>
+ 
 </body>
 </html>

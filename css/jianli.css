@@ -19,16 +19,23 @@ header .header_nav{
     line-height: 35px;
     background-color: #fff;
 }
+
 header .header_nav .header_nav_list ul li{
     float: left;
     
     margin-right: 9%;
 }
+header .header_nav .header_nav_list ul li.active{
+    border-bottom: 2px solid red;
+}
 header .header_nav .header_nav_list ul li a{
     color:#404040;
 }
+header .header_nav .header_nav_list ul li a.active{
+    color:#ff4f4c;
+}
 header .header_nav .header_nav_list ul li a:hover{
-    color: #ff4f4c
+    color: #ff4f4c;
 }
 header .header_nav .header_nav_right i{
     font-size: 20px;
@@ -876,7 +883,7 @@ footer{
         text-align: left;
     }
     .a .a_img img{
-        display: inline;
+        
         width: 45px;
         height: 45px;
         float: left;

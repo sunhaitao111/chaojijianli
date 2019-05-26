@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/jianli.css">
+    <link rel="stylesheet" href="./css/tiaokuan.css">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <script src="./layui/layui.js"></script>
+    <script src="./js/1.12.24/jquery-1.12.4.js"></script>
+    <title>超级简历</title>
+</head>
+<style>
+body{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background: rgb(245, 245, 245);
+   
+}
+.main-1 h4{
+    text-align: center;
+    font-size: 22px;
+}
+.main h4{
+    font-size: 18px;
+    margin-top: 20px;
+}
+.content{
+    margin:0 20px;
+}
+.main-2 p{
+    letter-spacing: 1.1px;
+    padding-bottom: 20px;
+}
+.main-2 h3{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+header{
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding: 10px 0;
+    width: 100%;
+    height: 36px;
+    background: #fff;
+}
+header .header_nav{
+    width: 94%;
+    margin: 0 auto;
+    line-height: 35px;
+    background-color: #fff;
+}
+header .header_nav .header_nav_list ul li{
+    float: left;
+    margin-right: 9%;
+}
+header .header_nav .header_nav_list ul li a{
+    color:#404040;
+}
+header .header_nav .header_nav_list ul li a:hover{
+    color: #ff4f4c
+}
+header .header_nav .header_nav_right i{
+    font-size: 20px;
+    color: #404040;
+    margin-right: 16px;
+    float: left;
+}
+.language_text{
+    display: none;
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    top: 130%;
+    left: 10%;
+    color: #ff4f4c;
+    line-height: 28px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+    background: #fff;
+}
+.app{
+    display: none;
+    width: 240px;
+    height: 300px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    cursor: pointer;
+    background-color: #fff; 
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+}
+.layui-tab-title li{
+    width: 100px;
+    color: #FF3D3D;
+    border: 1px solid #FF3D3D;
+}
+.layui-tab-title .layui-this{
+    display: block;
+    width: 100px;
+    margin-bottom: 10px; 
+    margin: 0 auto;
+    border: none;
+    background-color: #ff4f4c;
+}
+header .header_nav .header_nav_right .line{
+    height: 26px;
+    width: 2px;
+    background: #DEDFE1;
+    margin-right: 12px;
+    float: left;
+    margin-top: 4px;
+}
+header .header_nav .header_nav_right .link .link_btn{
+    display: inline-block;
+    width: 80px;
+    border-radius: 2px;
+    margin-left: 12px;
+    text-align: center;
+    color: #ff4f4c;
+    border: 1px solid #ff4f4c;
+}
+header .header_nav .header_nav_right .link .link_btn.active{
+    background: #ff4f4c !important;
+    color: #FFFFFF !important;
+}
+header .header_nav .header_nav_right .link .link_btn:hover{
+    background: #ff4f4c !important;
+    color: #FFFFFF !important;
+}
+</style>
+<body >
+    
+        <header>
+                <div class="layui-row header_nav">
+                    <div class="layui-col-md3 layui-col-sm3 layui-col-xs9">
+                        <a href="./index.html"><img width="115px" src="./images/logo.png" alt=""></a>
+                    </div>
+                    <div class="layui-col-xs layui-hide-md">
+                        <a href="" style="
+                            display: inline-block;
+                            width: 66px;
+                            height: 30px;
+                            line-height: 30px;
+                            text-align: center;
+                            font-size: 13px;
+                            padding: 0px;
+                            margin-top: -4px;
+                            background-color: #FF4F4C;
+                            color: #fff;
+                            margin-left: 10px;
+                            margin-right: 0;
+                            ">导入简历</a>
+                    </div>
+                    <div class="layui-col-md6 layui-col-sm3 header_nav_list layui-hide-xs ">
+                        <ul>
+                            <li><a href="./jlmb.html">简历模板</a></li>
+                            <li><a href="./qzx.html">求职信</a></li>
+                            <li><a href="">简历攻略</a></li>
+                            <li><a href="./jlzd.html">简历诊断</a></li>
+                            <li><a href="./mqnt.html">名企内推</a></li>
+                        </ul>
+                    </div>
+                    <div class="layui-col-md3 layui-hide-xs header_nav_right">
+                        
+                        <i class="layui-icon layui-icon-website language" style="margin-left: 18px; cursor: pointer;"></i>
+                        
+                        <div class="language_text">
+                            <div class="language_text_t">中文</div>
+                            <div class="language_text_b" style="color: #404040;">EN</div>
+                        </div>
+                            
+                        <i class="layui-icon layui-icon-cellphone app1"></i>
+                        <div class="layui-tab app">
+                            
+                            <div class="layui-tab-content" style="width: 218px; text-align:center;">
+                              <div class="layui-tab-item layui-show">
+                                  <h5>扫码下载app 同步编辑</h5>
+                                  <img width="140px" src="./images/app.png" alt="">
+                              </div>
+                              <div class="layui-tab-item">
+                                  <h5>扫码关注 微信同步</h5>
+                                  <img width="140px" src="./images/gongzhonghao.png" alt="">
+                              </div>
+                            </div>
+                            <ul class="layui-tab-title" style="border: none; text-align:center;">
+                                <li class="layui-this" style="margin-bottom: 15px;">App</li>
+                                <li>微信</li>
+                              </ul>
+                          </div>
+                        <div class="line"></div>
+                        <div class="link">
+                            <a href="./denglu.html" class="link_btn">登陆</a>
+                            <a href="./zhuce.html" class="link_btn active">注册</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </header>
+  
+
+    <div class="layui-row main" style="background: #f7f7f7">
+        <div class="col-md-12 content">
+        <div class=" main-1">
+            <h4 style="padding-top: 160px;font-size: 30px;">服务条款</h4>
+            <strong>生效日期：2017年3月1日</strong>
+            <hr>
+        </div>
+    <div class="main-2">
+        <h4 >欢迎您使用我们的产品！</h4>
+        <br>
+        <p>超级简历 WonderCV是由北京超职科技有限公司（下称“超职科技”）提供的互联网软件服务。
+            本服务条款（下称“服务条款”）是您与超职科技之间关于您（“您”或“用户”）访问和使用超
+            级简历 WonderCV以及北京超职科技有限公司提供的其他服务（下称“服务”）的主要协议。
+            您注册、登录超级简历 WonderCV和/或使用超职科技提供的服务，即表示您同意接受服务条
+            款。因此，敬请仔细阅读。
+        </p>
+        <br>
+        <p>
+                超职科技有权不时地对服务条款做任何修改和补充，并在超级简历 WonderCV网站上公布。
+                通常情况下（例如当需要进行修改或补充以满足适用法律要求时），对服务条款的修改和
+                补充将在公布时立即生效。您继续访问和使用超级简历 WonderCV即视为您接受修订后的
+                服务条款。否则，您有权通过停止访问超级简历 WonderCV且拒绝使用服务、删除您在超
+                级简历 WonderCV上的信息和帐户等方式来终止服务条款。
+        </p>
+        <br>
+        <h3 class="theme-font-color">1.服务内容</h3>
+        <br>
+        <p>超级简历 WonderCV的服务由北京超职科技有限公司提供技术支持，提供两个方向的简历服务：</p>
+        <ul>
+            <li>提供简历撰写工具。</li>
+            <li>提供简历导师服务。
+                <em class="theme-font-color">（注：导师服务简历为在本站撰写工具生成的简历）</em>
+            </li>
+        </ul>
+        <br>
+        <p>根据实际需要和超职科技不时提供的其他服务内容，超职科技可能与您另行签订其他协议。同时
+            ，即使未另行签订其他协议，您使用超级简历 WonderCV的具体服务也将被视为您同意超职科
+            技关于该具体服务的任何要求。如果其他协议和本条款之间存在冲突，应以其他协议为准，但以
+            该冲突和与该协议特定事宜相关为限。
+        </p>
+        <br>
+        <p>超职科技保留随时变更、中止或终止部分免费服务的权利，并保留根据实际情况随时调整超级简历
+             WonderCV提供的服务种类、形式。超职科技不承担因超级简历 WonderCV提供的任何免费服务的
+             调整给您造成的损失。尽管有本条约定，超职科技有权在未来恰当的时机对该等免费服务内容收
+             取相应的服务费用。超职科技保留随时终止向您提供的收费服务的权利，并保留根据实际情况随
+             时调整超级简历 WonderCV提供的收费服务种类和形式。如果超职科技终止提供某项收费服务，
+             超职科技的义务仅在于向您返还您尚未使用的服务期对应的部分费用。但无论如何，超职科技将
+             尽合理的努力给您预留合理的时间以便您为该等服务变更、中止或终止做出应对。
+        </p>
+        <br>
+        <h3 class="theme-font-color">2.注册</h3>
+        <br>
+        <p>为了能访问超级简历 WonderCV和使用服务，您同意以下事项：依超级简历 WonderCV网站注册提示
+            填写准确的、真实的注册邮箱、密码和名称，并确保今后更新的登录邮箱、名称等资料的有效性和
+            合法性。若您提供任何违法、虚假、不道德或超职科技保认为不适合在超级简历 WonderCV上展示
+            的资料；或者超职科技保有理由怀疑您的资料属于病毒程序或恶意操作；或者您违反本服务条款的
+            规定；或者未经超职科技保同意，将超级简历 WonderCV用于商业目的，超职科技保有权暂停或终
+            止您的帐号，并拒绝您于现在和未来使用服务之全部或任何部分。
+        </p>
+        <br>
+        <p>尽管有前述规定，超职科技无义务对任何用户的任何登记资料承担任何责任，包括但不限于鉴别、核
+            实任何登记资料的真实性、准确性、完整性、适用性及/或是否为最新资料的责任。同时，超职科技
+            建议您妥善保管您的注册邮箱、密码和名称，准确输入该等信息将作为您访问登录超级简历 Wonder
+            CV并享有服务的关键环节。如果您发现有人未经授权使用您的帐户信息或怀疑任何人未经授权可能能
+            够访问您的私有内容，您应立即更改密码，并向我们反馈。如果您提供的信息不正确或您未能确保您
+            的帐户信息的安全而造成任何损失或损害，超职科技不承担任何责任。
+        </p>
+        <br>
+        <h3 class="theme-font-color">3.内容使用权</h3>
+        <p>用户在超级简历 WonderCV上填写的内容（包含但不限于超级简历 WonderCV目前各产品功能里的内容）
+            仅表明其个人的立场和观点，并不代表超职科技的立场或观点。作为内容的发表者，需自行对所发表的
+            内容负责，因所发表内容引发的一切纠纷，由该内容的发表者承担全部法律责任及连带责任，超职科技
+            不承担任何法律责任及连带责任。用户在超级简历 WonderCV发布侵犯他人知识产权或其他合法权益的
+            内容，超级简历 WonderCV有权利但无义务予以删除并保留移交司法机关处理的权利。无论是否删除或
+            意见司法机关处理，超级简历 WonderCV均不承担任何法律责任及连带责任。
+        </p>
+        <em class="theme-font-color">用户不得使用超级简历 WonderCV服务发送或传播敏感信息和违反国家法律
+            制度的信息，包括但不限于下列信息：
+        </em>
+        <ul style="margin-top: 10px;list-style: none;">
+            <li>反对宪法所确定的基本原则的；</li>
+            <li>危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；</li>
+            <li>损害国家荣誉和利益的；</li>
+            <li>煽动民族仇恨、民族歧视，破坏民族团结的；</li>
+            <li>破坏国家宗教政策，宣扬邪教和封建迷信的；</li>
+            <li>散布谣言，扰乱社会秩序，破坏社会稳定的；</li>
+            <li>散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；</li>
+            <li>侮辱或者诽谤他人，侵害他人合法权益的；</li>
+            <li>含有法律、行政法规禁止的其他内容的。</li>
+        </ul>
+        <br>
+        <p>用户承诺发表言论要：爱国、守法、自律、真实、文明。不传播任何非法的、骚扰性的、中伤他人的、辱骂性的
+            、恐吓性的、伤害性的、庸俗的，淫秽的、危害国家安全的、泄露国家机密的、破坏国家宗教政策和民族团结的
+            以及其它违反法律法规及政策的内容。若用户的行为不符合以上提到的服务条款，超级简历 WonderCV将作出独
+            立判断立即暂停或终止用户的服务帐号。用户需对自己在网上的行为承担法律责任，超级简历 WonderCV不承
+            担任何法律责任及连带责任。
+        </p>
+        <br>
+        <h3 class="theme-font-color">4.版权</h3>
+        <br>
+        <p>超级简历 WonderCV的外观设计、计算机代码与专利等均归超职科技所有。未经超职科技事先书面许可，您不能复制、
+            拷贝、或者使用任何部分的代码和外观设计。
+        </p>
+        <br>
+        <h3 class="theme-font-color">5.隐私政策</h3>
+        <br>
+        <p>使用超级简历 WonderCV和超职科技提供的服务，即表示您同意超职科技合法收集和使用有关您及您所使用服务的技术
+            性或诊断性信息。收集到的这些信息将用于改进超级简历 WonderCV产品的内容和技术，提升超级简历 WonderCV的服务品质。
+        </p>
+        <em>超职科技不会将您的信息和内容提供或出售给其他的组织或个人，但以下情况除外：</em>
+        <br>
+        <ul style="margin-top: 10px;">
+            <li>您的事先同意或授权，或您于超级简历 WonderCV上主动与第三方进行分享操作；</li>
+            <li>司法机关或有权政府机构或任何法律法规部门规章要求超职科技提供该等信息；</li>
+            <li>您违反了本服务条款，且超职科技需要向第三方提供的。</li>
+        </ul>
+        <br>
+        <h3 class="theme-font-color">6.数据安全</h3>
+        <br>
+        <p>超职科技将尽合理的努力保护您的信息安全，并为此采取合理的数据传输、存储、转换等预防保护措施。但是，互联网数据传输
+            、存储、转换均可能存在一定未知且不确定的数据安全风险，该等风险将导致包括但不限于数据丢失、泄露、损坏、无法读取或
+            提取等后果。您确认，您已明确知晓并同意接受该等因互联网引发的风险和后果，并已采取恰当的措施（例如数据备份等），以
+            便在该等风险发生时将损失降至最低。
+        </p>
+        <br>
+        <p>因互联网技术本身等非超职科技主观故意或重大过失导致危害您数据安全的，超职科技不承担任何赔偿责任。因超职科技重大过失
+            危害您数据安全的，超职科技的赔偿责任以向您收取的服务费用为上限。
+        </p>
+        <br>
+        <h3 class="theme-font-color">7.免责声明</h3>
+        <br>
+        <p>
+            一旦您注册成为用户即表示您与超职科技达成协议，完全接受本服务条款项下的全部条款。对免责声明的解释、修改及更新权均属于超职科技所有。
+        </p>
+        <ul>
+            <li>由于您将用户密码告知他人或与他人共享注册帐户，由此导致的任何个人信息的泄漏，或其他非因超职科技原因导致的个人信息的泄漏，超职科技不承担任何法律责任；</li>
+            <li>任何第三方根据超职科技各服务条款及声明中所列明的情况使用您的个人信息，由此所产生的纠纷，超职科技不承担任何法律责任以及连带责任；</li>
+            <li>任何由于黑客攻击、电脑病毒侵入或政府管制而造成的暂时性网站关闭，超职科技不承担任何法律责任；</li>
+            <li>我们鼓励用户充分利用超级简历 WonderCV自由地发布和共享自己的信息。您可以自由发布文字、图片等内容，但这些内容必须位于公共
+                领域内，或者您拥有这些内容的使用权。同时，用户不应在自己的个人主页或超级简历 WonderCV的任何其他地方发布受版权保护的内容；
+            </li>
+            <li>用户在超级简历 WonderCV发布侵犯他人知识产权或其他合法权益的内容，超职科技有权予以删除，并保留移交司法机关处理的权利；</li>
+            <li>用户对于自己创作并在超级简历 WonderCV上发布的合法内容依法享有著作权及其他相关权利；</li>
+            <li>互联网是一个开放平台，用户将图片等资料上传到互联网上，有可能会被其他组织或个人复制、转载、擅改或做其它非法用途，用户必须充分
+                意识到此类风险的存在。用户明确同意使用超职科技服务所存在的风险将完全由用户自己承担；因用户使用超职科技服务而产生的一切后果也
+                由用户自己承担，超职科技对用户不承担任何责任。
+            </li>
+        </ul>
+        <h3 class="theme-font-color">8.服务变更/中断/终止</h3>
+        <br>
+        <p>如因系统维护或升级的需要而暂停网络服务、调整服务功能的，超职科技将尽可能事先在网站上进行通告。</p>
+        <p>如发生下列任何一种情形，超职科技有权单方面中断或终止向用户提供服务而无需通知用户：</p>
+        <ul>
+            <li>用户提供的个人资料不真实；</li>
+            <li>用户违反本服务条款中规定的使用规则；</li>
+            <li>未经超职科技同意，将超级简历 WonderCV用于商业目的。</li>
+        </ul>
+        <br>
+        <h3 class="theme-font-color">9.服务条款的完善和修改</h3>
+        <br>
+        <p>超职科技有权根据互联网的发展和中华人民共和国有关法律、法规的变化，不时地完善和修改超职科技服务条款。超职科技保留随时修改服务条
+            款的权利，用户在使用超职科技的服务时，有必要对最新的超职科技服务条款进行仔细阅读和重新确认，当发生相关争议时，以最新的服务条款为准。
+        </p>
+        <br>
+        <h3 class="theme-font-color">10.特别约定</h3>
+        <br>
+        <p>本服务条款及其下的服务受中华人民共和国法律管辖，并按之解释。</p>
+        <p>用户使用本服务的行为若有任何违反国家法律法规或侵犯任何第三方合法权益的情形，超职科技有权直接删除该等违反规定的信息，并可以暂停或终止向该用户提供服务。
+        </p>
+        <p>若用户利用本服务从事任何违法或侵权行为，由用户自行承担全部责任，超职科技不承担任何法律责任及连带责任。因此给超职科技或任何第三方造
+            成任何损失的，用户应负责全额赔偿。
+        </p>
+        <br>
+        <h3 class="theme-font-color">11.联系我们</h3>
+        <br>
+        <p>欢迎您对我们的服务条款提出意见。如有任何问题、意见或疑虑，请发邮件至info@wondercv.com 此电子邮件地址作为本服务条款的组成部分可能会不时进行更新。
+        </p>
+        <br>
+        <p>©北京超职科技有限公司保留一切权利。</p>
+
+    </div>
+
+
+
+
+
+    </div>
+
+
+    <footer class="layui-hide-xs">
+            <div class="layui-row  footer_1">
+              <div class="layui-col-md1 layui-col-md-offset1 footer_2"><img src="./images/logo.png" alt="" style="display: block;"><img src="./images/erweima.png" alt=""></div>
+              <div class="layui-col-md1 footer_2"></div>
+              <div class="layui-col-md6 footer_2">
+                    <div class="layui-col-md2 ">
+                        <ul>
+                                <li><a href=""style=" color: #9B9B9B;">联系我们</a></li>
+                                <li><a href="">在线客服</a></li>
+                                <li><a href="">微信</a></li>
+                                <li><a href="">微博</a></li>
+                                <li><a href="">知乎</a></li>
+                        </ul>
+                    </div>
+                    <div class="layui-col-md2">
+                        <ul>
+                        <li><a href=""style=" color: #9B9B9B;">关于我们</a></li>
+                        <li><a href="">产品介绍</a></li>
+                        <li><a href="">使用条款</a></li>
+                        <li><a href="">隐私协议</a></li>
+                        <li><a href="">加入我们</a></li>
+                        <li><a href="">网站地图</a></li>
+                        </ul>
+                        </div>
+                    <div class="layui-col-md2">
+                        <ul>
+                            <li><a href=""style=" color: #9B9B9B;">快速进入</a></li>
+                            <li><a href="">首页</a></li>
+                            <li><a href="">我的简历</a></li>
+                            <li><a href="">简历攻略</a></li>
+                            <li><a href="">导师辅导</a></li>
+                            <li><a href="">职位列表</a></li>
+                           </ul></div>
+                    <div class="layui-col-md3"><ul>
+                            <li><a href=""style=" color: #9B9B9B;">简历模板</a></li>
+                            <li><a href="">学生简历模板</a></li>
+                            <li><a href="">英文简历模板</a></li>
+                            <li><a href="">程序员简历模板</a></li>
+                            <li><a href="">经典工作简历模板</a></li>
+                            <li><a href="">春招礼包</a></li>
+                           </ul></div>
+                    <div class="layui-col-md3"><ul>
+                            <li><a href=""style=" color: #9B9B9B;">其他产品</a></li>
+                            <li><a href="">下载App</a></li>
+                            <li><a href="">微信小程序</a></li>
+                            <li><a href="">大牛简历</a></li>
+                            <li><a href="">微信名片</a></li>
+                           </ul></div>
+              </div>
+              <div class=" layui-col-md1 footer_2"></div>
+              <div class="layui-col-md2 layui-col-md-offset-1  footer_3"><button class="layui-btn"><i class="layui-icon layui-icon-website" ></i>切换语言</button></div>
+              <div class="footer_4"><p>合作伙伴： <a>LinkedIn 智联招聘</a> <a>智联招聘</a>  <a>前程无忧</a>     <a>猎聘</a>   <a> 问卷网</a>   <a>华军软件园</a> <p>
+                    友情链接（+QQ:409259639）： 无界空间 简历模板 考试宝典 人民大学在职研究生 <br>
+                    大同人事考试网 留学培训 北京招聘会 武汉拓展培训 金华人才网 论文查重 查职位 <br>
+                    建筑人才网 衡阳人才网 漳州人才网 IT在线教育 漳州公务员考试网 金融人才网 健康管理师</p></div>
+                    <div class="footer_4" style="margin-top:30px; text-align: center"><p>© 2019  超级简历 WonderCV wondercv.com | 京ICP备17055181号</p> </div>
+            </footer>
+    </div>
+    
+</body>
+</html>
