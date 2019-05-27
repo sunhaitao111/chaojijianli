@@ -118,7 +118,7 @@ header .header_nav .header_nav_right .link .link_btn:hover{
     background: url(../images/beijing.png) repeat;
     background-size: 100%;
     width: 100%;
-    /* height: 845px; */
+    height: 500px;
     text-align: center;
     padding-top: 100px;
     padding-bottom: 340px;
@@ -229,6 +229,9 @@ header .header_nav .header_nav_right .link .link_btn:hover{
     }
     .resume-slongan{
         font-size: 12px;
+    }
+    .main .banner{
+        height: auto;
     }
 }
 .resume-type {
